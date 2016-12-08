@@ -1,0 +1,38 @@
+{
+	"name": "TheWikipediaLibrary",
+	"version": "1.0.0",
+	"author": [
+		"Kavitha Muthu"
+	],
+	"url": "",
+	"namemsg": "theWikipediaLibrary",
+	"descriptionmsg": "theWikipediaLibrary-desc",
+	"license-name": "MIT",
+	"type": "other",
+	"manifest_version": 1,
+	"MessagesDirs": {
+		"TheWikipediaLibrary": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"TheWikipediaLibraryHooks": "Hooks.php",
+		"TwlEligiblePresentationModel": "includes/TwlEligiblePresentationModel.php"
+	},
+	"Hooks": {
+		"BeforeCreateEchoEvent": [
+			"TheWikipediaLibraryHooks::onBeforeCreateEchoEvent"
+		],
+		"PageContentSaveComplete": [
+			"TheWikipediaLibraryHooks::onPageContentSaveComplete"
+		]
+	},
+	"config": {
+		"TwlUserPrimaryUrl": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library/Databases",
+		"TwlUserSecondaryUrl": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library",
+		"TwlRegistrationDays": 70,
+		"TwlRegistrationHours": 24,
+		"TwlRegistrationSeconds": 3600,
+		"TwlEditCount": 250
+	}
+}
