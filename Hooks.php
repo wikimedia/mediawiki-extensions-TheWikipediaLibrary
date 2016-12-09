@@ -24,7 +24,7 @@ class TheWikipediaLibraryHooks {
 		];
 
 		$notifications['twl-eligible'] = [
-			EchoAttributeManager::ATTR_LOCATORS => array[
+			EchoAttributeManager::ATTR_LOCATORS => [
 				'EchoUserLocator::locateEventAgent'
 			],
 			'category' => 'twl-eligible',
@@ -34,7 +34,7 @@ class TheWikipediaLibraryHooks {
 		];
 
 		$icons['twl-eligible'] = [
-			'path' => 'modules/icons/twl-eligible.svg'
+			'path' => 'TheWikipediaLibrary/modules/icons/twl-eligible.svg'
 		];
 
 		return true;
@@ -63,7 +63,7 @@ class TheWikipediaLibraryHooks {
 	 *  you should use the OutputPage::addFeedLink() method,
 	 *  instead.
 	 */
-	public static function onPageContentSaveComplete( &$article, &$user ) {
+	public static function onPageContentSaveComplete( &$article, &$user, $content, $summary, $minoredit, $watchthis, $sectionanchor, &$flags, $revision, &$status ) {
 		$title = $article->getTitle();
 
 		// if the user has 500 edits and has been registered for 6 months give access
