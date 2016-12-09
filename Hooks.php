@@ -40,16 +40,16 @@ class TheWikipediaLibraryHooks {
 		return true;
 	}
 
-	public static function onEchoGetDefaultNotifiedUsers( EchoEvent $event, &$users ) {
-		if ( $event->getType() === 'twl-eligible') {
-			$userAgent = $event->getAgent();
-			$recipientId = $userAgent->getId();
-			$recipient = User::newFromId( $recipientId );
-			$users[$recipientId] = $recipient;
-			return true;
-		}
-
-	}
+	// public static function onEchoGetDefaultNotifiedUsers( EchoEvent $event, &$users ) {
+	// 	if ( $event->getType() === 'twl-eligible') {
+	// 		$userAgent = $event->getAgent();
+	// 		$recipientId = $userAgent->getId();
+	// 		$recipient = User::newFromId( $recipientId );
+	// 		$users[$recipientId] = $recipient;
+	// 		return true;
+	// 	}
+	//
+	// }
 
 	/**
 	 * Use this hook to remove feed links from the head
