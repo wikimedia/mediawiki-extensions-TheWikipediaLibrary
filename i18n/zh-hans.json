@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"theWikipediaLibrary": "维基百科图书馆",
+	"theWikipediaLibrary-desc": "通知维基百科用户的系统",
+	"notification-header-twl-eligiblity": "祝贺！您现在有资格访问维基百科图书馆数据库了",
+	"notification-body-twl-eligiblity": "申请获得对研究数据库的自由访问",
+	"notification-twl-eligiblity-secondarylink-text": "维基百科图书馆",
+	"notification-twl-eligiblity-primarylink-text": "查看可用数据库"
+}

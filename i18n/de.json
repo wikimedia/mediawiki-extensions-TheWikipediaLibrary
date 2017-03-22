@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"theWikipediaLibrary": "TheWikipediaLibrary",
+	"theWikipediaLibrary-desc": "Ein System zur Benachrichtigung von The-Wikipedia-Benutzern",
+	"notification-header-twl-eligiblity": "Herzlichen Glückwunsch! Du bist zum Zugriff auf die Wikipedia-Bibliotheksdatenbanken berechtigt.",
+	"notification-body-twl-eligiblity": "Bewerbung für freien Zugriff auf Forschungsdatenbanken",
+	"notification-twl-eligiblity-secondarylink-text": "Die Wikipedia-Bibliothek",
+	"notification-twl-eligiblity-primarylink-text": "Verfügbare Datenbanken ansehen"
+}
