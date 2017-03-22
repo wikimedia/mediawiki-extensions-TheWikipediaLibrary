@@ -9,7 +9,7 @@
 class TheWikipediaLibraryHooks {
 
 	/**
-	 * Add Thanks events to Echo
+	 * Add The Wikipedia Library - eligibility events to Echo
 	 *
 	 * @param $notifications array of Echo notifications
 	 * @param $notificationCategories array of Echo notification categories
@@ -19,7 +19,7 @@ class TheWikipediaLibraryHooks {
 	public static function onBeforeCreateEchoEvent(
 		&$notifications, &$notificationCategories, &$icons
 	) {
-		$notificationCategories['twl-eligible'] = [
+		$notificationCategories['system'] = [
 			'priority' => 9
 		];
 
@@ -27,7 +27,7 @@ class TheWikipediaLibraryHooks {
 			EchoAttributeManager::ATTR_LOCATORS => [
 				'EchoUserLocator::locateEventAgent'
 			],
-			'category' => 'twl-eligible',
+			'category' => 'system',
 			'group' => 'positive',
 			'section' => 'message',
 			'presentation-model' => 'TwlEligiblePresentationModel'
@@ -39,17 +39,6 @@ class TheWikipediaLibraryHooks {
 
 		return true;
 	}
-
-	// public static function onEchoGetDefaultNotifiedUsers( EchoEvent $event, &$users ) {
-	// 	if ( $event->getType() === 'twl-eligible') {
-	// 		$userAgent = $event->getAgent();
-	// 		$recipientId = $userAgent->getId();
-	// 		$recipient = User::newFromId( $recipientId );
-	// 		$users[$recipientId] = $recipient;
-	// 		return true;
-	// 	}
-	//
-	// }
 
 	/**
 	 * Use this hook to remove feed links from the head

@@ -28,11 +28,11 @@
 		]
 	},
 	"config": {
-		"TwlUserPrimaryUrl": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library/Databases",
+		"TwlUserPrimaryUrl": "https://wikipedialibrary.wmflabs.org/",
 		"TwlUserSecondaryUrl": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library",
-		"TwlRegistrationDays": 70,
+		"TwlRegistrationDays": 182,
 		"TwlRegistrationHours": 24,
 		"TwlRegistrationSeconds": 3600,
-		"TwlEditCount": 250
+		"TwlEditCount": 500
 	}
 }
