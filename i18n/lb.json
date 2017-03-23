@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"theWikipediaLibrary": "TheWikipediaLibrary",
+	"theWikipediaLibrary-desc": "System fir The-Wikipedia-Benotzer ze informéieren",
+	"notification-header-twl-eligiblity": "Felicitatiounen! Dir kënnt Zougang op Wikipedia-Library Datebanke kréien",
+	"notification-body-twl-eligiblity": "Frot u fir Zougang op Forschungsdatebanken ze kréien",
+	"notification-twl-eligiblity-secondarylink-text": "D'Wikipedia-Bibliothéik",
+	"notification-twl-eligiblity-primarylink-text": "Disponibel Datebanke weisen"
+}
