@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"StanProg"
+		]
+	},
+	"theWikipediaLibrary": "БиблиотекаУикипедия",
+	"theWikipediaLibrary-desc": "Система за уведомяване на потребителите на Уикипедия",
+	"notification-header-twl-eligiblity": "Поздравления! Имате право на достъп до базите от данни на Библиотека Уикипедия",
+	"notification-body-twl-eligiblity": "Заявка за свободен достъп до научните бази от данни",
+	"notification-twl-eligiblity-secondarylink-text": "Библиотека Уикипедия",
+	"notification-twl-eligiblity-primarylink-text": "Преглед на наличните бази от данни"
+}

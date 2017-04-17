@@ -4,5 +4,8 @@
 			"Ykhwong"
 		]
 	},
+	"theWikipediaLibrary": "위키백과도서관",
+	"notification-body-twl-eligiblity": "연구 데이터베이스의 자유로운 접근 권한 신청하기",
+	"notification-twl-eligiblity-secondarylink-text": "위키백과 도서관",
 	"notification-twl-eligiblity-primarylink-text": "사용할 수 있는 데이터베이스 보기"
 }

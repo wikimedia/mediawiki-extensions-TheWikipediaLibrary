@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"theWikipediaLibrary": "TheWikipediaLibrary",
+	"theWikipediaLibrary-desc": "Система для сповіщення користувачів Вікіпедії",
+	"notification-header-twl-eligiblity": "Вітаємо! Ви маєте право доступу до баз даних Бібліотеки Вікіпедії",
+	"notification-body-twl-eligiblity": "Подайте запит, щоб отримати вільний доступ до дослідницьких баз даних",
+	"notification-twl-eligiblity-secondarylink-text": "Бібліотека Вікіпедії",
+	"notification-twl-eligiblity-primarylink-text": "Переглянути доступні бази даних"
+}
