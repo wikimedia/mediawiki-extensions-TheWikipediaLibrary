@@ -5,6 +5,7 @@
 		]
 	},
 	"theWikipediaLibrary": "위키백과도서관",
+	"theWikipediaLibrary-desc": "위키백과 사용자에게 알림을 제공하는 시스템",
 	"notification-header-twl-eligiblity": "축하합니다! 당신은 위키백과 도서관 데이터베이스에 접근할 자격이 있습니다.",
 	"notification-body-twl-eligiblity": "연구 데이터베이스의 자유로운 접근 권한 신청하기",
 	"notification-twl-eligiblity-secondarylink-text": "위키백과 도서관",
