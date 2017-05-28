@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"theWikipediaLibrary": "TheWikipediaLibrary",
+	"theWikipediaLibrary-desc": "Sistema p'avisar a los usuarios de Wikipedia",
+	"notification-header-twl-eligiblity": "¡Felicidaes! Yes aptu p'aportar a les bases de datos de la Biblioteca de Wikipedia",
+	"notification-body-twl-eligiblity": "Solicita accesu llibre a les bases de datos d'investigación",
+	"notification-twl-eligiblity-secondarylink-text": "La biblioteca de Wikipedia",
+	"notification-twl-eligiblity-primarylink-text": "Ver les bases de datos disponibles"
+}
