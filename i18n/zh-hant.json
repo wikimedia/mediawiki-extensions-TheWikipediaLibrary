@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Thomassth"
 		]
 	},
 	"theWikipediaLibrary": "維基百科圖書館",
-	"notification-twl-eligiblity-secondarylink-text": "維基百科圖書館"
+	"theWikipediaLibrary-desc": "通知維基百科使用者的系統",
+	"notification-header-twl-eligiblity": "恭喜！你已獲准存取維基百科圖書館數據庫",
+	"notification-body-twl-eligiblity": "申請自由存取研究數據庫",
+	"notification-twl-eligiblity-secondarylink-text": "維基百科圖書館",
+	"notification-twl-eligiblity-primarylink-text": "瀏覽可用的數據庫"
 }
