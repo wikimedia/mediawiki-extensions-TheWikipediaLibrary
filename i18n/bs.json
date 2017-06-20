@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Srdjan m"
+		]
+	},
+	"theWikipediaLibrary": "TheWikipediaLibrary",
+	"theWikipediaLibrary-desc": "Sistem za obavještavanje korisnika Wikipedije",
+	"notification-body-twl-eligiblity": "Podnesite zahtjev za slobodan pristup istraživačkoj bazi podataka",
+	"notification-twl-eligiblity-primarylink-text": "Raspoložive baze podataka"
+}
