@@ -22,10 +22,6 @@ class TheWikipediaLibraryHooks {
 	public static function onBeforeCreateEchoEvent(
 		&$notifications, &$notificationCategories, &$icons
 	) {
-		$notificationCategories['system'] = [
-			'priority' => 9
-		];
-
 		$notifications['twl-eligible'] = [
 			EchoAttributeManager::ATTR_LOCATORS => [
 				'EchoUserLocator::locateEventAgent'
