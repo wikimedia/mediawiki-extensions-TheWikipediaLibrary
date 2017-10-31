@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kavitha Muthu"
+			"Kavitha Muthu",
+			"Umherirrender"
 		]
 	},
-	"theWikipediaLibrary": "The name of the extension",
+	"theWikipediaLibrary": "{{name}}",
 	"theWikipediaLibrary-desc": "{{desc|name=TheWikipediaLibrary|url=}}",
 	"notification-header-twl-eligiblity": "Notifications header message when a user has gained access to the Wikipedia Library.",
 	"notification-body-twl-eligiblity": "Notifications body message indicating a user has access to Wikipedia Library database.",
