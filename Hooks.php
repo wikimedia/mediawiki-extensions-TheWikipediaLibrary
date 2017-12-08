@@ -52,8 +52,8 @@ class TheWikipediaLibraryHooks {
 	 *  you should use the OutputPage::addFeedLink() method,
 	 *  instead.
 	 */
-	public static function onPageContentSaveComplete( &$article, &$user, $content, $summary, $minoredit, $watchthis, $sectionanchor, &$flags, $revision, &$status ) {
-		$title = $article->getTitle();
+	public static function onPageContentSaveComplete( WikiPage &$wikiPage, &$user, $content, $summary, $minoredit, $watchthis, $sectionanchor, &$flags, $revision, &$status ) {
+		$title = $wikiPage->getTitle();
 		global $wgTwlSendNotifications;
 
 			// if the feature flag is set to true, schedule a callable update.
