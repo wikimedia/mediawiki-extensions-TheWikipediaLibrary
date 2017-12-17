@@ -4,5 +4,7 @@
 			"Red Winged Duck"
 		]
 	},
-	"theWikipediaLibrary": "Бібліятэка Вікіпэдыі"
+	"theWikipediaLibrary": "Бібліятэка Вікіпэдыі",
+	"theWikipediaLibrary-desc": "Сыстэма для паведамленьняў удзельнікам Вікіпэдыі",
+	"notification-header-twl-eligiblity": "Віншуем! Вы маеце права на доступ да базаў зьвестак бібліятэкі Вікіпэдыі"
 }
