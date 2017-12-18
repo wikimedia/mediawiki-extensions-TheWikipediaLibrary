@@ -6,5 +6,6 @@
 	},
 	"theWikipediaLibrary": "Бібліятэка Вікіпэдыі",
 	"theWikipediaLibrary-desc": "Сыстэма для паведамленьняў удзельнікам Вікіпэдыі",
-	"notification-header-twl-eligiblity": "Віншуем! Вы маеце права на доступ да базаў зьвестак бібліятэкі Вікіпэдыі"
+	"notification-header-twl-eligiblity": "Віншуем! Вы маеце права на доступ да базаў зьвестак бібліятэкі Вікіпэдыі",
+	"notification-body-twl-eligiblity": "Заяўка на атрыманьне бясплатнага доуступу да навуковых базаў зьвестак"
 }
