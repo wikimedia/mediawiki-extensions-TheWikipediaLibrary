@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zulfadli51"
+		]
+	},
+	"theWikipediaLibrary": "PerpustakaanWikipedia",
+	"theWikipediaLibrary-desc": "Sistem untuk memberitahu Pengguna Wikipedia",
+	"notification-header-twl-eligiblity": "Tahniah! Anda layak untuk mengakses pangkalan data Perpustakaan Wikipedia",
+	"notification-body-twl-eligiblity": "Mohon untuk mendapatkan akses percuma ke pangkalan data penyelidikan",
+	"notification-twl-eligiblity-secondarylink-text": "Perpustakaan Wikipedia",
+	"notification-twl-eligiblity-primarylink-text": "Lihat pangkalan data yang ada"
+}
