@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patriccck"
+		]
+	},
+	"theWikipediaLibrary": "TheWikipediaLibrary",
+	"theWikipediaLibrary-desc": "Systém pro oznamování uživatelů Wikipedie",
+	"notification-header-twl-eligiblity": "Gratulujeme! Máte přístup k databázím knihoven Wikipedie",
+	"notification-body-twl-eligiblity": "Požádejte o bezplatný přístup k prohledávání databází",
+	"notification-twl-eligiblity-secondarylink-text": "Knihovna Wikipedie",
+	"notification-twl-eligiblity-primarylink-text": "Zobrazit dostupné databáze"
+}
