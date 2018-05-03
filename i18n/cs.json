@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patriccck"
+			"Patriccck",
+			"Mormegil"
 		]
 	},
 	"theWikipediaLibrary": "TheWikipediaLibrary",
-	"theWikipediaLibrary-desc": "Systém pro oznamování uživatelů Wikipedie",
-	"notification-header-twl-eligiblity": "Gratulujeme! Máte přístup k databázím knihoven Wikipedie",
-	"notification-body-twl-eligiblity": "Požádejte o bezplatný přístup k prohledávání databází",
+	"theWikipediaLibrary-desc": "Systém pro notifikování uživatelů Wikipedie",
+	"notification-header-twl-eligiblity": "Gratulujeme! Máte přístup k databázím Knihovny Wikipedie",
+	"notification-body-twl-eligiblity": "Požádejte o bezplatný přístup k prohledávání v databázích",
 	"notification-twl-eligiblity-secondarylink-text": "Knihovna Wikipedie",
 	"notification-twl-eligiblity-primarylink-text": "Zobrazit dostupné databáze"
 }
