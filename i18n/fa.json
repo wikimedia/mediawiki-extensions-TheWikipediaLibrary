@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Dejavu",
-			"Alirezaaa"
+			"Alirezaaa",
+			"Iriman"
 		]
 	},
-	"theWikipediaLibrary": "کتابخانه ویکی‌پدیا",
+	"theWikipediaLibrary": "کتابخانهٔ ویکی‌پدیا",
 	"theWikipediaLibrary-desc": "سامانهٔ اطلاع‌رسانی کاربران ویکی‌پدیا",
 	"notification-header-twl-eligiblity": "تبریک! شما واجد دسترسی به پایگاه‌داده‌های کتابخانهٔ ویکی‌پدیا هستید",
-	"notification-body-twl-eligiblity": "درخواست برای دسترسی آزاد به پژوهش در پایگاه داده‌های تحقیقاتی",
+	"notification-body-twl-eligiblity": "درخواست برای دسترسی آزاد به پژوهش در پایگاه‌داده‌های تحقیقاتی",
 	"notification-twl-eligiblity-secondarylink-text": "کتابخانهٔ ویکی‌پدیا",
-	"notification-twl-eligiblity-primarylink-text": "مشاهده پایگاه‌داده‌های موجود"
+	"notification-twl-eligiblity-primarylink-text": "مشاهدهٔ پایگاه‌داده‌های موجود"
 }
