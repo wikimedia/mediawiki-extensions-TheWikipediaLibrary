@@ -65,28 +65,25 @@ class TheWikipediaLibraryHooks {
 		global $wgTwlSendNotifications;
 		$title = $wikiPage->getTitle();
 
-		// if the feature flag is set to true, schedule a callable update.
 		if( $wgTwlSendNotifications ) {
-			// if the user has 500 edits and has been registered for 6 months give access
-			// to the-wikipedia-library database
+			// Send a notification if the user has at least $wgTwlEditCount edits and their account
+			// is at least $wgTwlRegistrationDays days old
 			DeferredUpdates::addCallableUpdate( function () use ( $user, $title ) {
-				global $wgTwlEditCount, $wgTwlRegistrationDays, $wgTwlRegistrationHours, $wgTwlRegistrationSeconds;
-				$twlRegistrationPeriod = $wgTwlRegistrationDays * $wgTwlRegistrationHours * $wgTwlRegistrationSeconds;
+				global $wgTwlEditCount, $wgTwlRegistrationDays;
 
-				// notify the user only once about the twl-eligibility
+				// If we've already notified this user, don't notify them again
 				$notificationMapper = new EchoNotificationMapper();
 				$notifications = $notificationMapper->fetchByUser( $user, 1, null, [ 'twl-eligible' ] );
 				if ( count( $notifications ) >= 1 ) {
 					return;
 				}
-				$registration_timestamp = wfTimestamp( TS_UNIX, $user->getRegistration() );
-				$lastedit_timestamp = wfTimestamp( TS_UNIX, wfTimestampNow( TS_UNIX ) );
-				$eligibility_period_timestamp = $lastedit_timestamp - $registration_timestamp;
-				if ( $user->getEditCount() >= $wgTwlEditCount && $eligibility_period_timestamp >= $twlRegistrationPeriod ) {
+
+				$accountAge = wfTimestampNow( TS_UNIX ) - wfTimestamp( TS_UNIX, $user->getRegistration() );
+				$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
+				if ( $user->getEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
 					EchoEvent::create( [
 						'type' => 'twl-eligible',
 						'agent' => $user,
-						// Wikipedia library eligiblity notification is sent to the agent
 						'extra' => [
 							'notifyAgent' => true,
 						]

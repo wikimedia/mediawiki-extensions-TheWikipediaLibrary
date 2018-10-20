@@ -32,8 +32,6 @@
 		"TwlUserSecondaryUrl": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library",
 		"TwlSendNotifications": true,
 		"TwlRegistrationDays": 182,
-		"TwlRegistrationHours": 24,
-		"TwlRegistrationSeconds": 3600,
 		"TwlEditCount": 500
 	}
 }
