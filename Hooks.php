@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * TheWikipediaLibrary extension hooks
  *
@@ -41,6 +44,17 @@ class TheWikipediaLibraryHooks {
 	}
 
 	/**
+	 * Add API preference tracking whether the user has been notified already.
+	 * @param User $user
+	 * @param array $preferences
+	 */
+	public static function onGetPreferences( User $user, array &$preferences ) {
+		$preferences['twl-notified'] = [
+			'type' => 'api'
+		];
+	}
+
+	/**
 	 * Send a Wikipedia Library notification if the user has reached 6 months and 500 edits.
 	 *
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete
@@ -72,15 +86,17 @@ class TheWikipediaLibraryHooks {
 				global $wgTwlEditCount, $wgTwlRegistrationDays;
 
 				// If we've already notified this user, don't notify them again
-				$notificationMapper = new EchoNotificationMapper();
-				$notifications = $notificationMapper->fetchByUser( $user, 1, null, [ 'twl-eligible' ] );
-				if ( count( $notifications ) >= 1 ) {
+				if ( $user->getOption( 'twl-notified' ) ) {
 					return;
 				}
 
-				$accountAge = wfTimestampNow( TS_UNIX ) - wfTimestamp( TS_UNIX, $user->getRegistration() );
+				$globalUser = CentralAuthUser::getInstance( $user );
+				if ( !$globalUser->isAttached() ) {
+					return;
+				}
+				$accountAge = wfTimestampNow( TS_UNIX ) - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 				$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
-				if ( $user->getEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
+				if ( $globalUser->getGlobalEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
 					EchoEvent::create( [
 						'type' => 'twl-eligible',
 						'agent' => $user,
@@ -88,6 +104,13 @@ class TheWikipediaLibraryHooks {
 							'notifyAgent' => true,
 						]
 					] );
+
+					// Set the twl-notified preference globally, so we'll know not to notify this user again
+					$prefsFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
+					$prefsFactory->setUser( $user );
+					$prefs = $prefsFactory->getGlobalPreferencesValues( true );
+					$prefs['twl-notified'] = 1;
+					$prefsFactory->setGlobalPreferences( $prefs, RequestContext::getMain() );
 				}
 			} );
 		}

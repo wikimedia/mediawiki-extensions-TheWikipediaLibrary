@@ -2,7 +2,8 @@
 	"name": "TheWikipediaLibrary",
 	"version": "1.0.0",
 	"author": [
-		"Kavitha Muthu"
+		"Kavitha Muthu",
+		"Roan Kattouw"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:TheWikipediaLibrary",
 	"namemsg": "theWikipediaLibrary",
@@ -10,6 +11,12 @@
 	"license-name": "MIT",
 	"type": "other",
 	"manifest_version": 1,
+	"requires": {
+		"extensions": {
+			"CentralAuth": "*",
+			"GlobalPreferences": "*"
+		}
+	},
 	"MessagesDirs": {
 		"TheWikipediaLibrary": [
 			"i18n"
@@ -19,13 +26,13 @@
 		"TheWikipediaLibraryHooks": "Hooks.php",
 		"TwlEligiblePresentationModel": "includes/TwlEligiblePresentationModel.php"
 	},
+	"DefaultUserOptions": {
+		"twl-notified": false
+	},
 	"Hooks": {
-		"BeforeCreateEchoEvent": [
-			"TheWikipediaLibraryHooks::onBeforeCreateEchoEvent"
-		],
-		"PageContentSaveComplete": [
-			"TheWikipediaLibraryHooks::onPageContentSaveComplete"
-		]
+		"BeforeCreateEchoEvent": "TheWikipediaLibraryHooks::onBeforeCreateEchoEvent",
+		"GetPreferences": "TheWikipediaLibraryHooks::onGetPreferences",
+		"PageContentSaveComplete": "TheWikipediaLibraryHooks::onPageContentSaveComplete"
 	},
 	"config": {
 		"TwlUserPrimaryUrl": "https://wikipedialibrary.wmflabs.org/",
