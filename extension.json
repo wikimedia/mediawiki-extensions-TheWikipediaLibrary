@@ -10,7 +10,6 @@
 	"descriptionmsg": "theWikipediaLibrary-desc",
 	"license-name": "MIT",
 	"type": "other",
-	"manifest_version": 1,
 	"requires": {
 		"extensions": {
 			"CentralAuth": "*",
@@ -35,10 +34,26 @@
 		"PageContentSaveComplete": "TheWikipediaLibraryHooks::onPageContentSaveComplete"
 	},
 	"config": {
-		"TwlUserPrimaryUrl": "https://wikipedialibrary.wmflabs.org/",
-		"TwlUserSecondaryUrl": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library",
-		"TwlSendNotifications": true,
-		"TwlRegistrationDays": 182,
-		"TwlEditCount": 500
-	}
+		"TwlUserPrimaryUrl": {
+			"description": "URL that the Wikipedia Library notification links to",
+			"value": "https://wikipedialibrary.wmflabs.org/"
+		},
+		"TwlUserSecondaryUrl": {
+			"description": "URL that the secondary link at the bottom of the notification links to",
+			"value": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library"
+		},
+		"TwlSendNotifications": {
+			"description": "Whether to send Wikipedia Library notifications. If set to false, no notifications will be sent.",
+			"value": true
+		},
+		"TwlRegistrationDays": {
+			"description": "Minimum account age (in days) for a user to be eligible for the Wikipedia Library",
+			"value": 182
+		},
+		"TwlEditCount": {
+			"description": "Minimum (global) edit count for a user to be eligible for the Wikipedia Library",
+			"value": 500
+		}
+	},
+	"manifest_version": 2
 }
