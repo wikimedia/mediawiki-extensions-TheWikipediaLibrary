@@ -6,7 +6,7 @@
 	},
 	"theWikipediaLibrary": "TheWikipediaLibrary",
 	"theWikipediaLibrary-desc": "Sistema para notificar os utilizadores da Wikipédia",
-	"notification-header-twl-eligiblity": "Parabéns! Pode aceder às bases de dados da Biblioteca da Wikipédia",
+	"notification-header-twl-eligiblity": "Parabéns! É elegível para acesso à Biblioteca da Wikipédia.",
 	"notification-body-twl-eligiblity": "Solicite acesso gratuito às bases de dados de pesquisa",
 	"notification-twl-eligiblity-secondarylink-text": "A Biblioteca da Wikipédia",
 	"notification-twl-eligiblity-primarylink-text": "Ver as bases de dados disponíveis"
