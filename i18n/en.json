@@ -5,7 +5,7 @@
 		]
 	},
 	"theWikipediaLibrary": "TheWikipediaLibrary",
-	"theWikipediaLibrary-desc": "System for notifying The Wikipedia Users",
+	"theWikipediaLibrary-desc": "Notify users of their eligibility for the Wikipedia Library when they cross the edit count and account age thresholds",
 	"notification-header-twl-eligiblity": "Congratulations! You are eligible for Wikipedia Library access.",
 	"notification-body-twl-eligiblity": "Apply to get free access to research databases",
 	"notification-twl-eligiblity-secondarylink-text": "The Wikipedia Library",
