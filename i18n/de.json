@@ -5,7 +5,7 @@
 		]
 	},
 	"theWikipediaLibrary": "TheWikipediaLibrary",
-	"theWikipediaLibrary-desc": "Ein System zur Benachrichtigung von The-Wikipedia-Benutzern",
+	"theWikipediaLibrary-desc": "Ermöglicht die Benachrichtigung von Benutzern über ihre Berechtigung für die Wikipedia-Bibliothek, falls ihr Bearbeitungszähler und das Alter des Benutzerkontos Schwellen überschreitet",
 	"notification-header-twl-eligiblity": "Herzlichen Glückwunsch! Du bist zum Zugriff auf die Wikipedia-Bibliothek berechtigt.",
 	"notification-body-twl-eligiblity": "Bewerbung für freien Zugriff auf Forschungsdatenbanken",
 	"notification-twl-eligiblity-secondarylink-text": "Die Wikipedia-Bibliothek",
