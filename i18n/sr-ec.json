@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
 	"theWikipediaLibrary": "TheWikipediaLibrary",
 	"theWikipediaLibrary-desc": "Систем за обавештавање корисника Википедије",
-	"notification-header-twl-eligiblity": "Честитамо! Имате право на приступ базама података Википедијине библиотеке",
+	"notification-header-twl-eligiblity": "Честитамо! Имате право за приступ Википедијиној библиотеци.",
 	"notification-body-twl-eligiblity": "Пријавите се да бисте добили бесплатан приступ базама података за истраживања",
 	"notification-twl-eligiblity-secondarylink-text": "Википедијина библиотека",
 	"notification-twl-eligiblity-primarylink-text": "Погледајте доступне базе података"
