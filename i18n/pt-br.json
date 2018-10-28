@@ -5,7 +5,7 @@
 		]
 	},
 	"theWikipediaLibrary": "TheWikipediaLibrary",
-	"theWikipediaLibrary-desc": "Sistema para notificar os usuários da Wikipédia",
+	"theWikipediaLibrary-desc": "Notificar os usuários sobre sua elegibilidade para a Biblioteca da Wikipédia quando eles cruzarem a contagem de edições e os limites de idade da conta",
 	"notification-header-twl-eligiblity": "Parabéns! Você está qualificado para acessar a Biblioteca da Wikipédia.",
 	"notification-body-twl-eligiblity": "Solicite acesso gratuito às bases de dados de pesquisa",
 	"notification-twl-eligiblity-secondarylink-text": "A Biblioteca da Wikipédia",
