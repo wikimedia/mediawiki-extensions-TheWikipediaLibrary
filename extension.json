@@ -22,7 +22,7 @@
 		]
 	},
 	"AutoloadClasses": {
-		"TheWikipediaLibraryHooks": "Hooks.php",
+		"TheWikipediaLibraryHooks": "TheWikipediaLibraryHooks.php",
 		"TwlEligiblePresentationModel": "includes/TwlEligiblePresentationModel.php"
 	},
 	"DefaultUserOptions": {
