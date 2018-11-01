@@ -14,9 +14,9 @@ class TheWikipediaLibraryHooks {
 	/**
 	 * Add The Wikipedia Library - eligibility events to Echo
 	 *
-	 * @param $notifications array of Echo notifications
-	 * @param $notificationCategories array of Echo notification categories
-	 * @param $icons array of icon details
+	 * @param array &$notifications array of Echo notifications
+	 * @param array &$notificationCategories array of Echo notification categories
+	 * @param array &$icons array of icon details
 	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent(
@@ -46,7 +46,7 @@ class TheWikipediaLibraryHooks {
 	/**
 	 * Add API preference tracking whether the user has been notified already.
 	 * @param User $user
-	 * @param array $preferences
+	 * @param array &$preferences
 	 */
 	public static function onGetPreferences( User $user, array &$preferences ) {
 		$preferences['twl-notified'] = [
@@ -59,14 +59,14 @@ class TheWikipediaLibraryHooks {
 	 *
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete
 	 *
-	 * @param WikiPage $wikiPage
-	 * @param User $user
+	 * @param WikiPage &$wikiPage
+	 * @param User &$user
 	 * @param Content $content
 	 * @param string $summary
 	 * @param bool $isMinor
 	 * @param bool $watch
 	 * @param string $section
-	 * @param int $flags
+	 * @param int &$flags
 	 * @param Revision $revision
 	 * @param Status &$status
 	 * @param int $baseRevId
@@ -79,7 +79,7 @@ class TheWikipediaLibraryHooks {
 		global $wgTwlSendNotifications;
 		$title = $wikiPage->getTitle();
 
-		if( $wgTwlSendNotifications ) {
+		if ( $wgTwlSendNotifications ) {
 			// Send a notification if the user has at least $wgTwlEditCount edits and their account
 			// is at least $wgTwlRegistrationDays days old
 			DeferredUpdates::addCallableUpdate( function () use ( $user, $title ) {
@@ -94,7 +94,8 @@ class TheWikipediaLibraryHooks {
 				if ( !$globalUser->isAttached() ) {
 					return;
 				}
-				$accountAge = wfTimestampNow( TS_UNIX ) - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
+				$accountAge = wfTimestampNow( TS_UNIX ) -
+					wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 				$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
 				if ( $globalUser->getGlobalEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
 					EchoEvent::create( [
