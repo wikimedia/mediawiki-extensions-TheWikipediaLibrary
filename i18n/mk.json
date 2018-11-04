@@ -5,8 +5,8 @@
 		]
 	},
 	"theWikipediaLibrary": "Википедиска библиотека",
-	"theWikipediaLibrary-desc": "Разгласен систем за известување на корисниците на Википедија",
-	"notification-header-twl-eligiblity": "Честитаме! Подобни сте за пристап до базите на Википедиината библиотека",
+	"theWikipediaLibrary-desc": "Известување на корисници за нивната подобност за Википедиината библиотека кога ќе го надминат потребниот број на уредувања и старост на сметката",
+	"notification-header-twl-eligiblity": "Честитаме! Подобни сте за пристап до базите на Википедиината библиотека.",
 	"notification-body-twl-eligiblity": "Поднесете барање за слободен пристап до истражувачки бази",
 	"notification-twl-eligiblity-secondarylink-text": "Википедиска библиотека",
 	"notification-twl-eligiblity-primarylink-text": "Расположиви бази"
