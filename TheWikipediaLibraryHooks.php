@@ -30,6 +30,7 @@ class TheWikipediaLibraryHooks {
 			EchoAttributeManager::ATTR_LOCATORS => [
 				'EchoUserLocator::locateEventAgent'
 			],
+			'canNotifyAgent' => true,
 			'category' => 'system',
 			'group' => 'positive',
 			'section' => 'message',
@@ -101,9 +102,6 @@ class TheWikipediaLibraryHooks {
 					EchoEvent::create( [
 						'type' => 'twl-eligible',
 						'agent' => $user,
-						'extra' => [
-							'notifyAgent' => true,
-						]
 					] );
 
 					// Set the twl-notified preference globally, so we'll know not to notify this user again
