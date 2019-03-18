@@ -74,12 +74,10 @@ class TheWikipediaLibraryHooks {
 			&$flags, Revision $revision, Status &$status, $baseRevId, $undidRevId
 	) {
 		global $wgTwlSendNotifications;
-		$title = $wikiPage->getTitle();
-
 		if ( $wgTwlSendNotifications ) {
 			// Send a notification if the user has at least $wgTwlEditCount edits and their account
 			// is at least $wgTwlRegistrationDays days old
-			DeferredUpdates::addCallableUpdate( function () use ( $user, $title ) {
+			DeferredUpdates::addCallableUpdate( function () use ( $user ) {
 				global $wgTwlEditCount, $wgTwlRegistrationDays;
 
 				// If we've already notified this user, don't notify them again
