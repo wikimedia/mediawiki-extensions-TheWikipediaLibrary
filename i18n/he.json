@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"theWikipediaLibrary": "ספריית ויקיפדיה",
+	"theWikipediaLibrary-desc": "ספריית ויקיפדיה",
+	"notification-header-twl-eligiblity": "ברכות! יש לך גישה לספריית ויקיפדיה.",
+	"notification-body-twl-eligiblity": "בקשה לקבל גישה חופשית למסדי נתונים של מחקר",
+	"notification-twl-eligiblity-secondarylink-text": "ספריית ויקיפדיה",
+	"notification-twl-eligiblity-primarylink-text": "הצגת מסדי נתונים זמינים"
+}
