@@ -56,8 +56,8 @@ class TheWikipediaLibraryHooks {
 	 *
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete
 	 *
-	 * @param WikiPage &$wikiPage
-	 * @param User &$user
+	 * @param WikiPage $wikiPage
+	 * @param User $user
 	 * @param Content $content
 	 * @param string $summary
 	 * @param bool $isMinor
@@ -65,13 +65,13 @@ class TheWikipediaLibraryHooks {
 	 * @param string $section
 	 * @param int &$flags
 	 * @param Revision $revision
-	 * @param Status &$status
+	 * @param Status $status
 	 * @param int $baseRevId
 	 * @param int $undidRevId
 	 */
 	public static function onPageContentSaveComplete(
-			WikiPage &$wikiPage, User &$user, Content $content, $summary, $isMinor, $watch, $section,
-			&$flags, Revision $revision, Status &$status, $baseRevId, $undidRevId
+			WikiPage $wikiPage, User $user, Content $content, $summary, $isMinor, $watch, $section,
+			&$flags, Revision $revision, Status $status, $baseRevId, $undidRevId
 	) {
 		global $wgTwlSendNotifications;
 		if ( $wgTwlSendNotifications ) {
