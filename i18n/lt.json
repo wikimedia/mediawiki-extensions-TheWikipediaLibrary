@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Tomasdd"
 		]
 	},
 	"theWikipediaLibrary": "VikipedijosBiblioteka",
+	"notification-header-twl-eligiblity": "Sveikiname! Jūs turite prieigą prie Vikipedijos bibliotekos.",
+	"notification-body-twl-eligiblity": "Prašymas nemokamai naudotis mokslo duomenų bazėmis",
 	"notification-twl-eligiblity-secondarylink-text": "Vikipedijos Biblioteka",
 	"notification-twl-eligiblity-primarylink-text": "Žiūrėti prieinamas duomenų bazes"
 }
