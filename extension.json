@@ -6,8 +6,8 @@
 		"Roan Kattouw"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:TheWikipediaLibrary",
-	"namemsg": "theWikipediaLibrary",
-	"descriptionmsg": "theWikipediaLibrary-desc",
+	"namemsg": "thewikipedialibrary",
+	"descriptionmsg": "thewikipedialibrary-desc",
 	"license-name": "MIT",
 	"type": "other",
 	"requires": {
