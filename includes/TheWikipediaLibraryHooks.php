@@ -89,8 +89,8 @@ class TheWikipediaLibraryHooks {
 				if ( !$globalUser->isAttached() ) {
 					return;
 				}
-				$accountAge = wfTimestamp( TS_UNIX ) -
-					wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
+				$accountAge = (int)wfTimestamp( TS_UNIX ) -
+					(int)wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 				$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
 				if ( $globalUser->getGlobalEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
 					EchoEvent::create( [
