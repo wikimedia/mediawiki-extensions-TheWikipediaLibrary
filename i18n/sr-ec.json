@@ -5,8 +5,8 @@
 			"BadDog"
 		]
 	},
-	"theWikipediaLibrary": "TheWikipediaLibrary",
-	"theWikipediaLibrary-desc": "Систем за обавештавање корисника Википедије",
+	"thewikipedialibrary": "TheWikipediaLibrary",
+	"thewikipedialibrary-desc": "Систем за обавештавање корисника Википедије",
 	"notification-header-twl-eligiblity": "Честитамо! Имате право за приступ Википедијиној библиотеци.",
 	"notification-body-twl-eligiblity": "Пријавите се да бисте добили бесплатан приступ базама података за истраживања",
 	"notification-twl-eligiblity-secondarylink-text": "Википедијина библиотека",

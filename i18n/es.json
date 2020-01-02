@@ -4,8 +4,8 @@
 			"Macofe"
 		]
 	},
-	"theWikipediaLibrary": "La biblioteca de Wikipedia",
-	"theWikipediaLibrary-desc": "Sistema para notificar a los usurios de Wikipedia",
+	"thewikipedialibrary": "La biblioteca de Wikipedia",
+	"thewikipedialibrary-desc": "Sistema para notificar a los usurios de Wikipedia",
 	"notification-header-twl-eligiblity": "¡Felicitaciones! Eres apto para acceder a las bases de datos de la biblioteca de Wikipedia",
 	"notification-body-twl-eligiblity": "Solicita acceso libre a las bases de datos de investigación",
 	"notification-twl-eligiblity-secondarylink-text": "La biblioteca de Wikipedia",
