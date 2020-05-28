@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"K Messaoudi"
+			"K Messaoudi",
+			"YouvaDjouadi"
 		]
 	},
-	"thewikipedialibrary": "Tamkerḍit n Wikipedia"
+	"thewikipedialibrary": "Tamkerḍit n Wikipedia",
+	"thewikipedialibrary-desc": "Sseɛlem imseqdac ɣer uqbal i ttwaqeblen deg temkarḍit n Wikipedia mi ara yaweḍ umṣiḍan-nsen leḥsab n yibeddilen i ilaqen akked mi ara temmed tmeddurt n umiḍan-nsen.",
+	"notification-header-twl-eligiblity": "Gidha ! Tettwaqebleḍ ɣer temkarḍit n Wikipedia, tzemṛeḍ ad tkecmeḍ tura ɣer-s."
 }
