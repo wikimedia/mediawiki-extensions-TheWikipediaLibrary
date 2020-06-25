@@ -31,9 +31,9 @@
 	},
 	"Hooks": {
 		"BeforeCreateEchoEvent": "TheWikipediaLibraryHooks::onBeforeCreateEchoEvent",
-		"GetPreferences": "TheWikipediaLibraryHooks::onGetPreferences",
-		"PageContentSaveComplete": "TheWikipediaLibraryHooks::onPageContentSaveComplete"
+		"GetPreferences": "TheWikipediaLibraryHooks::onGetPreferences"
 	},
+	"callback": "TheWikipediaLibraryHooks::onRegistration",
 	"config": {
 		"TwlUserPrimaryUrl": {
 			"description": "URL that the Wikipedia Library notification links to",
