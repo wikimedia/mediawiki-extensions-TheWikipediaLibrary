@@ -26,7 +26,6 @@ class TheWikipediaLibraryHooks {
 		}
 	}
 
-
 	/**
 	 * Add The Wikipedia Library - eligibility events to Echo
 	 *
