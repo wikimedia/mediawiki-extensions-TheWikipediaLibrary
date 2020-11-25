@@ -156,10 +156,9 @@ class TheWikipediaLibraryHooks {
 				// Set the twl-notified preference globally, so we'll know not to notify this user again
 				$prefsFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
 				'@phan-var \GlobalPreferences\GlobalPreferencesFactory $prefsFactory';
-				$prefsFactory->setUser( $user );
-				$prefs = $prefsFactory->getGlobalPreferencesValues( true );
+				$prefs = $prefsFactory->getGlobalPreferencesValues( $user, true );
 				$prefs['twl-notified'] = 1;
-				$prefsFactory->setGlobalPreferences( $prefs, RequestContext::getMain() );
+				$prefsFactory->setGlobalPreferences( $user, $prefs, RequestContext::getMain() );
 			}
 		} );
 	}
