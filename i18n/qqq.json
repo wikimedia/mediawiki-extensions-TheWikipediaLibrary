@@ -2,13 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Kavitha Muthu",
-			"Umherirrender"
+			"Umherirrender",
+			"Jsn.sherman"
 		]
 	},
 	"thewikipedialibrary": "{{name}}",
 	"thewikipedialibrary-desc": "{{desc|name=TheWikipediaLibrary|url=}}",
 	"notification-header-twl-eligiblity": "Notifications header message when a user has gained access to the Wikipedia Library.",
 	"notification-body-twl-eligiblity": "Notifications body message indicating a user has access to Wikipedia Library database.",
-	"notification-twl-eligiblity-secondarylink-text": "Secondary link label for the Wikipedia Library user eligiblity notification.",
 	"notification-twl-eligiblity-primarylink-text": "Primary link label for the Wikipedia Library user eligiblity notification."
 }

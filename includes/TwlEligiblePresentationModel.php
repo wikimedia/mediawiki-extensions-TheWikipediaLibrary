@@ -33,22 +33,4 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 			'label' => $this->msg( 'notification-twl-eligiblity-primarylink-text' )->text(),
 		];
 	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function getSecondaryLinks() {
-		return [ $this->getTwlSecondaryLink() ];
-	}
-
-	private function getTwlSecondaryLink() {
-		global $wgTwlUserSecondaryUrl;
-		return [
-			'url' => $wgTwlUserSecondaryUrl,
-			'label' => $this->msg( 'notification-twl-eligiblity-secondarylink-text' )->text(),
-			'description' => '',
-			'icon' => 'article',
-			'prioritized' => true,
-		];
-	}
 }
