@@ -8,8 +8,7 @@
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Notifier les utilisateurs de leur éligibilité à la bibliothèque Wikipedia quand ils atteignent les seuils du compteur du nombre de modifications et de l'âge de leur compte",
-	"notification-header-twl-eligiblity": "Félicitations ! Vous êtes éligible pour l’accès à la bibliothèque de Wikipédia.",
+	"notification-header-twl-eligiblity": "Félicitations ! Vous êtes maintenant éligible pour l’accès à la bibliothèque de Wikipédia.",
 	"notification-body-twl-eligiblity": "Demander un accès libre aux bases de données de recherche",
-	"notification-twl-eligiblity-secondarylink-text": "La bibliothèque Wikipédia",
-	"notification-twl-eligiblity-primarylink-text": "Afficher les bases de données disponibles"
+	"notification-twl-eligiblity-primarylink-text": "Voir la bibliothèque"
 }

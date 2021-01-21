@@ -6,8 +6,7 @@
 	},
 	"thewikipedialibrary": "ספריית ויקיפדיה",
 	"thewikipedialibrary-desc": "ספריית ויקיפדיה",
-	"notification-header-twl-eligiblity": "ברכות! יש לך גישה לספריית ויקיפדיה.",
-	"notification-body-twl-eligiblity": "בקשה לקבל גישה חופשית למסדי נתונים של מחקר",
-	"notification-twl-eligiblity-secondarylink-text": "ספריית ויקיפדיה",
-	"notification-twl-eligiblity-primarylink-text": "הצגת מסדי נתונים זמינים"
+	"notification-header-twl-eligiblity": "ברכות! עכשיו יש לך זכות לגשת לספריית ויקיפדיה.",
+	"notification-body-twl-eligiblity": "{{GENDER:|עיין|עייני}} אוסף רחב של מקורות אמינים חופשיים.",
+	"notification-twl-eligiblity-primarylink-text": "הצגת הספרייה"
 }
