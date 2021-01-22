@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"SaldırganSincap"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Kullanıcıları, düzenleme sayısını ve hesap yaşı eşiklerini geçtiğinde Vikipedi Kütüphanesi'ne uygunluklarını bildirin.",
-	"notification-header-twl-eligiblity": "Tebrikler! Vikipedi Kütüphanesi erişimine hak kazanırsınız.",
-	"notification-body-twl-eligiblity": "Araştırma veritabanlarına ücretsiz erişim için başvurun",
-	"notification-twl-eligiblity-primarylink-text": "Kullanılabilir veritabanlarını görüntüle"
+	"notification-header-twl-eligiblity": "Tebrikler! Artık Vikipedi Kütüphanesi için uygunsunuz.",
+	"notification-body-twl-eligiblity": "Geniş bir ücretsiz güvenilir kaynak koleksiyonuna göz atın.",
+	"notification-twl-eligiblity-primarylink-text": "Kitaplığı gör"
 }
