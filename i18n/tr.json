@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agaafd",
 			"BaRaN6161 TURK",
 			"SaldırganSincap"
 		]
@@ -8,6 +9,6 @@
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Kullanıcıları, düzenleme sayısını ve hesap yaşı eşiklerini geçtiğinde Vikipedi Kütüphanesi'ne uygunluklarını bildirin.",
 	"notification-header-twl-eligiblity": "Tebrikler! Artık Vikipedi Kütüphanesi için uygunsunuz.",
-	"notification-body-twl-eligiblity": "Geniş bir ücretsiz güvenilir kaynak koleksiyonuna göz atın.",
+	"notification-body-twl-eligiblity": "Geniş ücretsiz güvenilir bir kaynak koleksiyonuna göz atın.",
 	"notification-twl-eligiblity-primarylink-text": "Kitaplığı gör"
 }
