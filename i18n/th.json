@@ -6,7 +6,7 @@
 		]
 	},
 	"thewikipedialibrary-desc": "เตือนผู้ใช้เมื่อพวกเขามีจำนวนการแก้ไขและอายุมากพอที่จะเข้าถึงห้องสมัดวิกิพีเดีย",
-	"notification-header-twl-eligiblity": "ยินดีด้วย! ขณะนี้คุณมีสิทธิ์การเข้าถึงห้องสมุดวิกิพีเดียแล้ว",
+	"notification-header-twl-eligiblity": "ยินดีด้วย! ขณะนี้คุณสามารถเข้าถึงห้องสมุดวิกิพีเดียแล้ว",
 	"notification-body-twl-eligiblity": "สมัครเพื้อเข้าใข้ฐานข้อมูลการวิจัยฟรี",
 	"notification-twl-eligiblity-primarylink-text": "ดูฐานข้อมูลที่สามารถใช้ได้"
 }
