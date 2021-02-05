@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"thewikipedialibrary": "Бібліятэка Вікіпэдыі",
 	"thewikipedialibrary-desc": "Паведамляе ўдзельнікам, што яны маюць магчымасьць доступу да бібліятэкі Вікіпэдыі, калі яны дасягаюць пэўнай колькасьці рэдагаваньняў і адпаведнага ўзросту рахунку",
-	"notification-header-twl-eligiblity": "Віншуем! Вы маеце права на доступ да бібліятэкі Вікіпэдыі.",
-	"notification-body-twl-eligiblity": "Заяўка на атрыманьне бясплатнага доуступу да навуковых базаў зьвестак",
-	"notification-twl-eligiblity-primarylink-text": "Пабачыць даступныя базы зьвестак"
+	"notification-header-twl-eligiblity": "Віншуем! Цяпер вы маеце доступ да бібліятэкі Вікіпэдыі.",
+	"notification-body-twl-eligiblity": "Азірайце шырокую калекцыю вольных надзейных крыніцаў.",
+	"notification-twl-eligiblity-primarylink-text": "Праглядзець бібліятэку"
 }

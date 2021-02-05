@@ -6,7 +6,8 @@
 		]
 	},
 	"thewikipedialibrary": "VikipedijosBiblioteka",
-	"notification-header-twl-eligiblity": "Sveikiname! Jūs turite prieigą prie Vikipedijos bibliotekos.",
-	"notification-body-twl-eligiblity": "Prašymas nemokamai naudotis mokslo duomenų bazėmis",
-	"notification-twl-eligiblity-primarylink-text": "Žiūrėti prieinamas duomenų bazes"
+	"thewikipedialibrary-desc": "Pranešti vartotojams apie jų prieigą prie Vikipedijos bibliotekos, kai jie peržengia redagavimo skaičiaus ir paskyros amžiaus ribas",
+	"notification-header-twl-eligiblity": "Sveikiname! Dabar Jūs turite prieigą prie Vikipedijos bibliotekos.",
+	"notification-body-twl-eligiblity": "Naršykite po platų nemokamų šaltinių rinkinį.",
+	"notification-twl-eligiblity-primarylink-text": "Peržiūrėti biblioteką"
 }
