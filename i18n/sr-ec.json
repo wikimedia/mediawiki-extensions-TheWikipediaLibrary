@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
+			"Kizule",
 			"Obsuser"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Систем за обавештавање корисника Википедије",
-	"notification-header-twl-eligiblity": "Честитамо! Имате право за приступ Википедијиној библиотеци.",
-	"notification-body-twl-eligiblity": "Пријавите се да бисте добили бесплатан приступ базама података за истраживања",
-	"notification-twl-eligiblity-primarylink-text": "Погледајте доступне базе података"
+	"notification-header-twl-eligiblity": "Честитамо! Сада имате право за приступ Википедијиној библиотеци.",
+	"notification-body-twl-eligiblity": "Прегледајте широку колекцију бесплатних поузданих извора.",
+	"notification-twl-eligiblity-primarylink-text": "Погледајте библиотеку"
 }

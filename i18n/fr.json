@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cquoi",
 			"Gomoko",
 			"Thibaut120094",
 			"Wladek92"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Notifier les utilisateurs de leur éligibilité à la bibliothèque Wikipedia quand ils atteignent les seuils du compteur du nombre de modifications et de l'âge de leur compte",
-	"notification-header-twl-eligiblity": "Félicitations ! Vous êtes maintenant éligible pour l’accès à la bibliothèque de Wikipédia.",
-	"notification-body-twl-eligiblity": "Parcourir une large collection de sources fiables et libres.",
+	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la bibliothèque Wikipédia lorsqu'ils franchissent les seuils du compteur d'édition et de l'âge de leur compte",
+	"notification-header-twl-eligiblity": "Félicitations ! Vous êtes maintenant éligible à l’accès à la bibliothèque de Wikipédia.",
+	"notification-body-twl-eligiblity": "Parcourez une large collection de sources fiables et libres.",
 	"notification-twl-eligiblity-primarylink-text": "Voir la bibliothèque"
 }

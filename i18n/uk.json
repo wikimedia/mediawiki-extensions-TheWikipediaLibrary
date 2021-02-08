@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"Ата"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Дозволяє сповіщати користувачів про отримання можливості доступу до Бібліотеки Вікіпедії, коли вони перетинають поріг необхідної кількості редагувань та віку облікового запису",
-	"notification-header-twl-eligiblity": "Вітаємо! Ви маєте право доступу до Бібліотеки Вікіпедії.",
-	"notification-body-twl-eligiblity": "Подайте запит, щоб отримати вільний доступ до дослідницьких баз даних",
-	"notification-twl-eligiblity-primarylink-text": "Переглянути доступні бази даних"
+	"notification-header-twl-eligiblity": "Вітаємо! Ви відповідаєте вимогам Бібліотеки Вікіпедії.",
+	"notification-body-twl-eligiblity": "Користуйтеся широким вибором вільних надійних джерел.",
+	"notification-twl-eligiblity-primarylink-text": "Переглянути бібліотеку"
 }
