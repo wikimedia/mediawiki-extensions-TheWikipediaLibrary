@@ -9,7 +9,7 @@
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la Bibliothèque Wikipédia lorsqu’ils franchissent les seuils du compteur de modifications et d'ancienneté de leur compte",
+	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la Bibliothèque Wikipédia lorsqu’ils franchissent les seuils du compteur de modifications et d’ancienneté de leur compte",
 	"notification-header-twl-eligiblity": "Félicitations ! Vous êtes maintenant éligible à l’accès à la Bibliothèque Wikipédia.",
 	"notification-body-twl-eligiblity": "Parcourez une large collection de sources fiables et libres.",
 	"notification-twl-eligiblity-primarylink-text": "Voir la bibliothèque"

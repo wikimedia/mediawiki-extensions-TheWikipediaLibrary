@@ -8,7 +8,7 @@
 	},
 	"thewikipedialibrary": "維基百科圖書館",
 	"thewikipedialibrary-desc": "當使用者的編輯次數和帳號存在時間通過門檻時，通知他們擁有使用維基百科圖書館資格",
-	"notification-header-twl-eligiblity": "恭喜！你已獲准使用維基百科圖書館資格。",
-	"notification-body-twl-eligiblity": "申請自由存取研究資料庫",
-	"notification-twl-eligiblity-primarylink-text": "瀏覽可用的資料庫"
+	"notification-header-twl-eligiblity": "恭喜！現在你已獲准使用維基百科圖書館的資格。",
+	"notification-body-twl-eligiblity": "瀏覽大量免費且可靠的來源。",
+	"notification-twl-eligiblity-primarylink-text": "瀏覽圖書館"
 }
