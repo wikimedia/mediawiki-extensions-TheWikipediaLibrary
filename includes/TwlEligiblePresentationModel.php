@@ -1,5 +1,10 @@
 <?php
+/*
+	When creating a new notification type for Echo, you need to
+	create a PresentationModel.
+	For more information, see: https://www.mediawiki.org/wiki/Extension:Echo/Creating_a_new_notification_type
 
+ */
 class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 
 	/**

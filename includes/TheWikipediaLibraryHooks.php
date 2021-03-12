@@ -1,5 +1,4 @@
 <?php
-
 use MediaWiki\MediaWikiServices;
 
 /**
