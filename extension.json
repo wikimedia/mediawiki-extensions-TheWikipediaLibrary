@@ -11,7 +11,7 @@
 	"license-name": "MIT",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.29.0",
+		"MediaWiki": ">= 1.35.0",
 		"extensions": {
 			"CentralAuth": "*",
 			"GlobalPreferences": "*"
@@ -30,10 +30,10 @@
 		"twl-notified": false
 	},
 	"Hooks": {
+		"PageSaveComplete": "TheWikipediaLibraryHooks::onPageSaveComplete",
 		"BeforeCreateEchoEvent": "TheWikipediaLibraryHooks::onBeforeCreateEchoEvent",
 		"GetPreferences": "TheWikipediaLibraryHooks::onGetPreferences"
 	},
-	"callback": "TheWikipediaLibraryHooks::onRegistration",
 	"config": {
 		"TwlUserPrimaryUrl": {
 			"description": "URL that the Wikipedia Library notification links to",

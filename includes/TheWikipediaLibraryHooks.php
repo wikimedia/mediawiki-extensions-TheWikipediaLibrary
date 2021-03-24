@@ -11,21 +11,6 @@ use MediaWiki\MediaWikiServices;
 class TheWikipediaLibraryHooks {
 
 	/**
-	 * Callback on extension registration
-	 *
-	 * Register hooks based on version to keep support for mediawiki versions before 1.35
-	 */
-	public static function onRegistration() {
-		global $wgHooks;
-
-		if ( version_compare( MW_VERSION, '1.35', '>=' ) ) {
-			$wgHooks['PageSaveComplete'][] = 'TheWikipediaLibraryHooks::onPageSaveComplete';
-		} else {
-			$wgHooks['PageContentSaveComplete'][] = 'TheWikipediaLibraryHooks::onPageContentSaveComplete';
-		}
-	}
-
-	/**
 	 * Add The Wikipedia Library - eligibility events to Echo
 	 *
 	 * @param array &$notifications array of Echo notifications
@@ -91,34 +76,6 @@ class TheWikipediaLibraryHooks {
 		global $wgTwlSendNotifications;
 		if ( $wgTwlSendNotifications ) {
 			$user = User::newFromIdentity( $userIdentity );
-			self::maybeSendNotification( $user );
-		}
-	}
-
-	/**
-	 * Send a Wikipedia Library notification if the user has reached 6 months and 500 edits.
-	 *
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageContentSaveComplete
-	 *
-	 * @param WikiPage $wikiPage
-	 * @param User $user
-	 * @param Content $content
-	 * @param string $summary
-	 * @param bool $isMinor
-	 * @param bool $watch
-	 * @param string $section
-	 * @param int &$flags
-	 * @param Revision $revision
-	 * @param Status $status
-	 * @param int $baseRevId
-	 * @param int $undidRevId
-	 */
-	public static function onPageContentSaveComplete(
-			WikiPage $wikiPage, User $user, Content $content, $summary, $isMinor, $watch, $section,
-			&$flags, Revision $revision, Status $status, $baseRevId, $undidRevId
-	) {
-		global $wgTwlSendNotifications;
-		if ( $wgTwlSendNotifications ) {
 			self::maybeSendNotification( $user );
 		}
 	}
