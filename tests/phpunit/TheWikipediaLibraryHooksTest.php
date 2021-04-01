@@ -1,8 +1,6 @@
 <?php
-use CentralAuth\CentralAuthUser;
 use GlobalPreferences\GlobalPreferencesFactory;
-use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\Storage\EditResult;
+use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 
 /**
  * @group TheWikipediaLibrary
@@ -11,6 +9,10 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp() : void {
 		parent::setUp();
+
+		$this->setMwGlobals( [
+			'wgTwlEditCount' => 2,
+		] );
 
 		// Methods that need to be set on both global users
 		$methods = [
@@ -24,19 +26,22 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 		$user1Name = 'User1';
 		$this->centralAuthUser1 = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
-			->setMethods( $methods )
+			->onlyMethods( $methods )
 			->getMock();
 
 		$this->centralAuthUser1->expects( $this->never() )->method( $this->anythingBut( '__destruct', ...$methods ) );
 
 		$this->centralAuthUser1->method( 'getName' )->willReturn( $user1Name );
-		$this->centralAuthUser1->method( 'getGlobalEditCount' )->willReturn( 650 );
+		$this->centralAuthUser1->method( 'getGlobalEditCount' )->willReturn( 2 );
 		$this->centralAuthUser1->method( 'getRegistration' )->willReturn( 365 );
 		$this->centralAuthUser1->method( 'isAttached' )->willReturn( true );
 
 		$this->user1 = $this->getMockBuilder( User::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'getOption', 'getName' ] )
+			->disableOriginalClone()
+			->disableArgumentCloning()
+			->disallowMockingUnknownTypes()
+			->onlyMethods( [ 'getOption', 'getName' ] )
 			->getMock();
 		$this->user1->method( 'getOption' )
 			->will( self::returnValueMap( [
@@ -50,19 +55,22 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 		$user2Name = 'User2';
 		$this->centralAuthUser2 = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
-			->setMethods( $methods )
+			->onlyMethods( $methods )
 			->getMock();
 
 		$this->centralAuthUser2->expects( $this->never() )->method( $this->anythingBut( '__destruct', ...$methods ) );
 
 		$this->centralAuthUser2->method( 'getName' )->willReturn( $user2Name );
-		$this->centralAuthUser2->method( 'getGlobalEditCount' )->willReturn( 50 );
+		$this->centralAuthUser2->method( 'getGlobalEditCount' )->willReturn( 1 );
 		$this->centralAuthUser2->method( 'getRegistration' )->willReturn( 180 );
 		$this->centralAuthUser2->method( 'isAttached' )->willReturn( true );
 
 		$this->user2 = $this->getMockBuilder( User::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'getOption', 'getName' ] )
+			->disableOriginalClone()
+			->disableArgumentCloning()
+			->disallowMockingUnknownTypes()
+			->onlyMethods( [ 'getOption', 'getName' ] )
 			->getMock();
 		$this->user2->method( 'getOption' )
 			->will( self::returnValueMap( [
@@ -74,69 +82,62 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \TheWikipediaLibraryHooks::onPageSaveComplete()
+	 * @covers \TheWikipediaLibraryHooks::isTwlEligible()
 	 */
-	public function testOnPageSaveCompleteUserNotified() {
-		$flags = EDIT_NEW;
-		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::class )
+	public function testIsTwlEligibleUserNotified() {
+		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::Class )
 				->disableOriginalConstructor()
-				->setMethods( [ 'getGlobalPreferencesValues' ] )
+				->disableOriginalClone()
+				->disableArgumentCloning()
+				->disallowMockingUnknownTypes()
+				->onlyMethods( [ 'getGlobalPreferencesValues' ] )
+				->setMockClassName( 'GlobalPreferencesFactory' )
 				->getMock();
-		$prefsFactory->method( 'getGlobalPreferencesValues' )
-			->willReturn( [
-				'twl-notified' => 0,
-			] );
+
+		if ( TheWikipediaLibraryHooks::isTwlEligible( $this->centralAuthUser1 ) ) {
+			$prefsFactory->method( 'getGlobalPreferencesValues' )
+				->willReturn( [
+					'twl-notified' => 'yes',
+				] );
+		} else {
+			$prefsFactory->method( 'getGlobalPreferencesValues' )
+				->willReturn( [
+					'twl-notified' => 'no',
+				] );
+		}
 
 		$this->setService( 'PreferencesFactory', $prefsFactory );
 
-		$summary = 'Test summary';
+		$twlNotified = PreferenceHelper::getGlobalPreference( $this->user1, 'twl-notified' );
 
-		TheWikipediaLibraryHooks::onPageSaveComplete(
-			$this->mockEntityPage1,
-			$this->user1,
-			$summary,
-			$flags,
-			$this->createMock( RevisionRecord::class ),
-			$this->createMock( EditResult::class )
-		);
-
-		$prefs = $prefsFactory->getGlobalPreferencesValues( $this->user1, true );
-
-		// TODO: uncomment this assertion when working on T256297
-		// $this->assertSame( $prefs['twl-notified'], 1 );
+		$this->assertSame( 'yes', $twlNotified );
 	}
 
 	/**
-	 * @covers \TheWikipediaLibraryHooks::onPageSaveComplete()
+	 * @covers \TheWikipediaLibraryHooks::isTwlEligible()
 	 */
-	public function testOnPageSaveCompleteUserNotNotified() {
-		$flags = EDIT_NEW;
+	public function testIsTwlEligibleUserNotNotified() {
 		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 				->disableOriginalConstructor()
-				->setMethods( [ 'getGlobalPreferencesValues' ] )
+				->onlyMethods( [ 'getGlobalPreferencesValues' ] )
 				->getMock();
-		$prefsFactory->method( 'getGlobalPreferencesValues' )
-			->willReturn( [
-				'twl-notified' => 0,
-			] );
+		if ( TheWikipediaLibraryHooks::isTwlEligible( $this->centralAuthUser2 ) ) {
+			$prefsFactory->method( 'getGlobalPreferencesValues' )
+				->willReturn( [
+					'twl-notified' => 'yes',
+				] );
+		} else {
+			$prefsFactory->method( 'getGlobalPreferencesValues' )
+				->willReturn( [
+					'twl-notified' => 'no',
+				] );
+		}
 
 		$this->setService( 'PreferencesFactory', $prefsFactory );
 
-		$summary = 'Test summary 2';
+		$twlNotified = PreferenceHelper::getGlobalPreference( $this->user2, 'twl-notified' );
 
-		TheWikipediaLibraryHooks::onPageSaveComplete(
-			$this->mockEntityPage2,
-			$this->user2,
-			$summary,
-			$flags,
-			$this->createMock( RevisionRecord::class ),
-			$this->createMock( EditResult::class )
-		);
-
-		$prefs = $prefsFactory->getGlobalPreferencesValues( $this->user2, true );
-
-		// TODO: uncomment this assertion when working on T256297
-		// $this->assertSame( $prefs['twl-notified'], 0 );
+		$this->assertSame( 'no', $twlNotified );
 	}
 
 }

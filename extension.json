@@ -26,8 +26,11 @@
 		"TheWikipediaLibraryHooks": "includes/TheWikipediaLibraryHooks.php",
 		"TwlEligiblePresentationModel": "includes/TwlEligiblePresentationModel.php"
 	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\TheWikipediaLibrary\\": "includes/"
+	},
 	"DefaultUserOptions": {
-		"twl-notified": false
+		"twl-notified": null
 	},
 	"Hooks": {
 		"PageSaveComplete": "TheWikipediaLibraryHooks::onPageSaveComplete",
@@ -38,10 +41,6 @@
 		"TwlUserPrimaryUrl": {
 			"description": "URL that the Wikipedia Library notification links to",
 			"value": "https://wikipedialibrary.wmflabs.org/"
-		},
-		"TwlUserSecondaryUrl": {
-			"description": "URL that the secondary link at the bottom of the notification links to",
-			"value": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library"
 		},
 		"TwlSendNotifications": {
 			"description": "Whether to send Wikipedia Library notifications. If set to false, no notifications will be sent.",

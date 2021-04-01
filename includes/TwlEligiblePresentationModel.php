@@ -38,4 +38,11 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 			'label' => $this->msg( 'notification-twl-eligiblity-primarylink-text' )->text(),
 		];
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getSecondaryLinks() {
+		return [];
+	}
 }
