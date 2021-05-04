@@ -1,5 +1,6 @@
 <?php
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
+use MediaWiki\Logger\LoggerFactory;
 
 /**
  * TheWikipediaLibrary extension hooks
@@ -16,10 +17,9 @@ class TheWikipediaLibraryHooks {
 	 * @param array &$notifications array of Echo notifications
 	 * @param array &$notificationCategories array of Echo notification categories
 	 * @param array &$icons array of icon details
-	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent(
-		&$notifications, &$notificationCategories, &$icons
+		array &$notifications, array &$notificationCategories, array &$icons
 	) {
 		$notifications['twl-eligible'] = [
 			EchoAttributeManager::ATTR_LOCATORS => [
@@ -35,8 +35,6 @@ class TheWikipediaLibraryHooks {
 		$icons['twl-eligible'] = [
 			'path' => 'TheWikipediaLibrary/modules/icons/twl-eligible.svg'
 		];
-
-		return true;
 	}
 
 	/**
@@ -73,10 +71,42 @@ class TheWikipediaLibraryHooks {
 		$revisionRecord,
 		$editResult
 	) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
+			// Need CentralAuth extension.
+			LoggerFactory::getInstance( 'TheWikipediaLibrary' )->warning(
+				'Not checking eligibility, CentralAuth is not available'
+			);
+			return;
+		}
+
 		global $wgTwlSendNotifications;
 		if ( $wgTwlSendNotifications ) {
 			$user = User::newFromIdentity( $userIdentity );
 			self::maybeSendNotification( $user );
+		}
+	}
+
+	/**
+	 * Determine Twl Eligibility
+	 *
+	 * @param CentralAuthUser $centralAuthUser
+	 * @return bool
+	 *
+	 * @note CentralAuthUser class mock in tests doesn't work with typehints,
+	 * so that typehint is not used. The variable name reflects the class.
+	 */
+	public static function isTwlEligible( CentralAuthUser $centralAuthUser ): bool {
+		global $wgTwlEditCount, $wgTwlRegistrationDays;
+
+		// Check eligibility
+		$accountAge = (int)wfTimestamp( TS_UNIX ) -
+			(int)wfTimestamp( TS_UNIX, $centralAuthUser->getRegistration() );
+		$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
+
+		if ( $centralAuthUser->getGlobalEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -89,32 +119,35 @@ class TheWikipediaLibraryHooks {
 		// Send a notification if the user has at least $wgTwlEditCount edits and their account
 		// is at least $wgTwlRegistrationDays days old
 		DeferredUpdates::addCallableUpdate( function () use ( $user ) {
-			global $wgTwlEditCount, $wgTwlRegistrationDays;
-
-			// If we've already notified this user, don't notify them again
-			if ( $user->getOption( 'twl-notified' ) ) {
-				return;
-			}
-
+			// Only proceed if we're dealing with an SUL account
 			$globalUser = CentralAuthUser::getInstance( $user );
 			if ( !$globalUser->isAttached() ) {
 				return;
 			}
-			$accountAge = (int)wfTimestamp( TS_UNIX ) -
-				(int)wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
-			$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
-			if ( $globalUser->getGlobalEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
+
+			// Only proceed if we haven't already notified this user
+			$twlNotified = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
+			if ( $twlNotified === 'yes' ) {
+				return;
+			// Set the twl-notified preference to 'no' if we haven't notified this user
+			// We've added this extra step to ensure that global preferences may be modified
+			// to avoid multiple notifications in case the preference isn't saved for some reason
+			// This situation occurred in testing on beta
+			} elseif ( $twlNotified === null ) {
+				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
+				// Read the value back from global preferences to ensure it's available
+				$twlNotified = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
+			}
+
+			// Notify the user if they are eligible and haven't been notified yet
+			if ( $twlNotified === 'no' && self::isTwlEligible( $globalUser ) ) {
 				EchoEvent::create( [
 					'type' => 'twl-eligible',
 					'agent' => $user,
 				] );
 
 				// Set the twl-notified preference globally, so we'll know not to notify this user again
-				$prefsFactory = MediaWikiServices::getInstance()->getPreferencesFactory();
-				'@phan-var \GlobalPreferences\GlobalPreferencesFactory $prefsFactory';
-				$prefs = $prefsFactory->getGlobalPreferencesValues( $user, true );
-				$prefs['twl-notified'] = 1;
-				$prefsFactory->setGlobalPreferences( $user, $prefs, RequestContext::getMain() );
+				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' );
 			}
 		} );
 	}
