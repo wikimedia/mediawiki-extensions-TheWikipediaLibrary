@@ -7,7 +7,7 @@ use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
  */
 class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->setMwGlobals( [
