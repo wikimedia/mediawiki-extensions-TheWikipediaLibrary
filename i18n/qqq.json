@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Jsn.sherman",
 			"Kavitha Muthu",
 			"Umherirrender"
@@ -9,6 +10,6 @@
 	"thewikipedialibrary": "{{name}}",
 	"thewikipedialibrary-desc": "{{desc|name=TheWikipediaLibrary|url=}}",
 	"notification-header-twl-eligiblity": "Notifications header message when a user has gained access to the Wikipedia Library.",
-	"notification-body-twl-eligiblity": "Notifications body message indicating a user has access to Wikipedia Library database.",
+	"notification-body-twl-eligiblity": "'''Note: \"Free\" here means \"zero dollars\", not as in \"free culture\".'''\n\nNotifications body message indicating a user has access to Wikipedia Library database.",
 	"notification-twl-eligiblity-primarylink-text": "Primary link label for the Wikipedia Library user eligiblity notification."
 }
