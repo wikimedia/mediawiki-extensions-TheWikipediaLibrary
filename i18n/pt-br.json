@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"Eduardoaddad"
+			"Eduardoaddad",
+			"Isabelle Belato"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Notificar os usuários sobre sua elegibilidade para a Biblioteca da Wikipédia quando eles cruzarem a contagem de edições e os limites de idade da conta",
 	"notification-header-twl-eligiblity": "Parabéns! Você está agora qualificado para acessar a Biblioteca da Wikipédia.",
-	"notification-body-twl-eligiblity": "Navegue por uma ampla coleção de fontes confiáveis gratuitas.",
+	"notification-body-twl-eligiblity": "Clique aqui para navegar por uma ampla coleção de fontes confiáveis gratuitas.",
 	"notification-twl-eligiblity-primarylink-text": "Veja a biblioteca"
 }

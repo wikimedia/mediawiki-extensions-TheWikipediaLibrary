@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tacsipacsi"
+		]
+	},
+	"thewikipedialibrary-desc": "A szerkesztők értesítése a Wikimédia Könyvtárhoz való hozzáférésre jogosulttá válásukról, amikor átlépik a szerkesztésszám- és fiókkorhatárt",
+	"notification-header-twl-eligiblity": "Gratulálunk! Jogosulttá váltál A Wikipédia Könyvtárhoz való hozzáférésre.",
+	"notification-body-twl-eligiblity": "Kattints ide ingyen elérhető források széles körű gyűjteményének eléréséhez.",
+	"notification-twl-eligiblity-primarylink-text": "A könyvtár megtekintése"
+}
