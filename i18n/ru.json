@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Okras",
 			"Redredsonia",
 			"Vlad5250"
@@ -8,7 +9,7 @@
 	},
 	"thewikipedialibrary": "БиблиотекаВикипедии",
 	"thewikipedialibrary-desc": "Уведомление пользователей об их праве на участие в Wikipedia Library, когда они достигают нужного числа правок и возраста учётной записи",
-	"notification-header-twl-eligiblity": "Поздравляем! Вы имеете право на доступ к базам данных Библиотеки Википедии.",
-	"notification-body-twl-eligiblity": "Заявка на свободный доступ к научным базам данных",
+	"notification-header-twl-eligiblity": "Поздравляем! Теперь вы имеете право к базам данных Библиотеки Википедии.",
+	"notification-body-twl-eligiblity": "Щелкните здесь, чтобы просмотреть обширную коллекцию бесплатных надежных источников.",
 	"notification-twl-eligiblity-primarylink-text": "Просмотр библиотеки"
 }
