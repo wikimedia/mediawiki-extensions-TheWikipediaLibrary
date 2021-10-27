@@ -52,7 +52,7 @@
 		},
 		"TwlEditCount": {
 			"description": "Minimum (global) edit count for a user to be eligible for the Wikipedia Library",
-			"value": 500
+			"value": 50000
 		}
 	},
 	"manifest_version": 2

@@ -49,7 +49,7 @@ class TheWikipediaLibraryHooks {
 	}
 
 	/**
-	 * Send a Wikipedia Library notification if the user has reached 6 months and 500 edits.
+	 * Send a Wikipedia Library notification if the user has reached the required age and editcount.
 	 *
 	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/PageSaveComplete
 	 *
