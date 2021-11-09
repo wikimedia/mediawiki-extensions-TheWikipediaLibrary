@@ -1,6 +1,7 @@
 <?php
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * TheWikipediaLibrary extension hooks
@@ -79,8 +80,8 @@ class TheWikipediaLibraryHooks {
 			return;
 		}
 
-		global $wgTwlSendNotifications;
-		if ( $wgTwlSendNotifications ) {
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
+		if ( $config->get( 'TwlSendNotifications' ) ) {
 			$user = User::newFromIdentity( $userIdentity );
 			self::maybeSendNotification( $user );
 		}
@@ -96,14 +97,16 @@ class TheWikipediaLibraryHooks {
 	 * so that typehint is not used. The variable name reflects the class.
 	 */
 	public static function isTwlEligible( CentralAuthUser $centralAuthUser ): bool {
-		global $wgTwlEditCount, $wgTwlRegistrationDays;
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
+		$twlEditCount = $config->get( 'TwlEditCount' );
+		$twlRegistrationDays = $config->get( 'TwlRegistrationDays' );
 
 		// Check eligibility
 		$accountAge = (int)wfTimestamp( TS_UNIX ) -
 			(int)wfTimestamp( TS_UNIX, $centralAuthUser->getRegistration() );
-		$minimumAge = $wgTwlRegistrationDays * 24 * 3600;
+		$minimumAge = $twlRegistrationDays * 24 * 3600;
 
-		if ( $centralAuthUser->getGlobalEditCount() >= $wgTwlEditCount && $accountAge >= $minimumAge ) {
+		if ( $centralAuthUser->getGlobalEditCount() >= $twlEditCount && $accountAge >= $minimumAge ) {
 			return true;
 		} else {
 			return false;
@@ -116,8 +119,8 @@ class TheWikipediaLibraryHooks {
 	 * @param User $user
 	 */
 	private static function maybeSendNotification( User $user ) {
-		// Send a notification if the user has at least $wgTwlEditCount edits and their account
-		// is at least $wgTwlRegistrationDays days old
+		// Send a notification if the user has at least $twlEditCount edits and their account
+		// is at least $twlRegistrationDays days old
 		DeferredUpdates::addCallableUpdate( function () use ( $user ) {
 			// Only proceed if we're dealing with an SUL account
 			$globalUser = CentralAuthUser::getInstance( $user );

@@ -1,6 +1,6 @@
 {
 	"name": "TheWikipediaLibrary",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": [
 		"Kavitha Muthu",
 		"Roan Kattouw"
@@ -54,6 +54,9 @@
 			"description": "Minimum (global) edit count for a user to be eligible for the Wikipedia Library",
 			"value": 50000
 		}
+	},
+	"ConfigRegistry": {
+		"TheWikipediaLibrary": "GlobalVarConfig::newInstance"
 	},
 	"manifest_version": 2
 }

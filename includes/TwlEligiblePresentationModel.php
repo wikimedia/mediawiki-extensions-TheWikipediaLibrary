@@ -1,4 +1,6 @@
 <?php
+use MediaWiki\MediaWikiServices;
+
 /*
 	When creating a new notification type for Echo, you need to
 	create a PresentationModel.
@@ -32,9 +34,9 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 	 * @inheritDoc
 	 */
 	public function getPrimaryLink() {
-		global $wgTwlUserPrimaryUrl;
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
 		return [
-			'url' => $wgTwlUserPrimaryUrl,
+			'url' => $config->get( 'TwlUserPrimaryUrl' ),
 			'label' => $this->msg( 'notification-twl-eligiblity-primarylink-text' )->text(),
 		];
 	}
