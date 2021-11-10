@@ -134,23 +134,18 @@ class TheWikipediaLibraryHooks {
 				return;
 			// Set the twl-notified preference to 'no' if we haven't notified this user
 			// We've added this extra step to ensure that global preferences may be modified
-			// to avoid multiple notifications in case the preference isn't saved for some reason
-			// This situation occurred in testing on beta
+			// to avoid multiple notifications in case the preference isn't saved before the next edit
 			} elseif ( $twlNotified === null ) {
 				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
-				// Read the value back from global preferences to ensure it's available
-				$twlNotified = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
-			}
-
+				return;
 			// Notify the user if they are eligible and haven't been notified yet
-			if ( $twlNotified === 'no' && self::isTwlEligible( $globalUser ) ) {
+			} elseif ( $twlNotified === 'no' && self::isTwlEligible( $globalUser ) ) {
+				// Set the twl-notified preference globally, so we'll know not to notify this user again
+				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' );
 				EchoEvent::create( [
 					'type' => 'twl-eligible',
 					'agent' => $user,
 				] );
-
-				// Set the twl-notified preference globally, so we'll know not to notify this user again
-				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' );
 			}
 		} );
 	}
