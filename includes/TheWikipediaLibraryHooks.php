@@ -1,7 +1,12 @@
 <?php
+
+use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Storage\EditResult;
+use MediaWiki\User\UserIdentity;
 
 /**
  * TheWikipediaLibrary extension hooks
@@ -58,19 +63,19 @@ class TheWikipediaLibraryHooks {
 	 * are not used. The variable name reflects the class
 	 *
 	 * @param WikiPage $wikiPage
-	 * @param mixed $userIdentity
+	 * @param UserIdentity $userIdentity
 	 * @param string $summary
 	 * @param int $flags
-	 * @param mixed $revisionRecord
-	 * @param mixed $editResult
+	 * @param RevisionRecord $revisionRecord
+	 * @param EditResult $editResult
 	 */
 	public static function onPageSaveComplete(
 		WikiPage $wikiPage,
-		$userIdentity,
+		UserIdentity $userIdentity,
 		string $summary,
 		int $flags,
-		$revisionRecord,
-		$editResult
+		RevisionRecord $revisionRecord,
+		EditResult $editResult
 	) {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
 			// Need CentralAuth extension.
@@ -79,11 +84,49 @@ class TheWikipediaLibraryHooks {
 			);
 			return;
 		}
-
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
 		if ( $config->get( 'TwlSendNotifications' ) ) {
+			$title = $wikiPage->getTitle();
 			$user = User::newFromIdentity( $userIdentity );
-			self::maybeSendNotification( $user );
+			self::maybeSendNotification( $user, $title );
+		}
+	}
+
+	/**
+	 * Decide whether to notify the user based on central auth eligibility and global preference state
+	 *
+	 * @param User $user
+	 * @param Title $title
+	 */
+	private static function maybeSendNotification( User $user, Title $title ) {
+		// Only proceed if we're dealing with an SUL account
+		$centralAuthUser = CentralAuthUser::getInstance( $user );
+		if ( !$centralAuthUser->isAttached() ) {
+			return;
+		}
+		// Only proceed if we're dealing with an eligible account
+		if ( !self::isTwlEligible( $centralAuthUser ) ) {
+			return;
+		}
+		// Only proceed if we haven't already notified this user
+		// First check the global preference.
+		$twlNotifiedPref = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
+		if ( $twlNotifiedPref === 'yes' ) {
+			return;
+			// Set the twl-notified preference to 'no' if we haven't notified this user
+			// We've added this extra step to ensure that global preferences may be modified
+			// to avoid multiple notifications in case the preference isn't saved before the next edit
+		} elseif ( $twlNotifiedPref === null ) {
+			PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
+			return;
+			// Notify the user if:
+			// - they haven't been notified yet
+			// - we can sucessfully set the preference
+		} elseif (
+			$twlNotifiedPref === 'no'
+			&& PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' )
+		) {
+			EchoHelper::send( $user, $title );
 		}
 	}
 
@@ -93,60 +136,20 @@ class TheWikipediaLibraryHooks {
 	 * @param CentralAuthUser $centralAuthUser
 	 * @return bool
 	 *
-	 * @note CentralAuthUser class mock in tests doesn't work with typehints,
-	 * so that typehint is not used. The variable name reflects the class.
 	 */
-	public static function isTwlEligible( CentralAuthUser $centralAuthUser ): bool {
+	public static function isTwlEligible( CentralAuthUser $centralAuthUser ) {
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
 		$twlEditCount = $config->get( 'TwlEditCount' );
 		$twlRegistrationDays = $config->get( 'TwlRegistrationDays' );
-
-		// Check eligibility
 		$accountAge = (int)wfTimestamp( TS_UNIX ) -
 			(int)wfTimestamp( TS_UNIX, $centralAuthUser->getRegistration() );
 		$minimumAge = $twlRegistrationDays * 24 * 3600;
-
-		if ( $centralAuthUser->getGlobalEditCount() >= $twlEditCount && $accountAge >= $minimumAge ) {
+		$globalEditCount = $centralAuthUser->getGlobalEditCount();
+		// Check eligibility
+		if ( $globalEditCount >= $twlEditCount && $accountAge >= $minimumAge ) {
 			return true;
 		} else {
 			return false;
 		}
-	}
-
-	/**
-	 * Shared implementation for PageContentSaveComplete and PageSaveComplete
-	 *
-	 * @param User $user
-	 */
-	private static function maybeSendNotification( User $user ) {
-		// Send a notification if the user has at least $twlEditCount edits and their account
-		// is at least $twlRegistrationDays days old
-		DeferredUpdates::addCallableUpdate( function () use ( $user ) {
-			// Only proceed if we're dealing with an SUL account
-			$globalUser = CentralAuthUser::getInstance( $user );
-			if ( !$globalUser->isAttached() ) {
-				return;
-			}
-
-			// Only proceed if we haven't already notified this user
-			$twlNotified = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
-			if ( $twlNotified === 'yes' ) {
-				return;
-			// Set the twl-notified preference to 'no' if we haven't notified this user
-			// We've added this extra step to ensure that global preferences may be modified
-			// to avoid multiple notifications in case the preference isn't saved before the next edit
-			} elseif ( $twlNotified === null ) {
-				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
-				return;
-			// Notify the user if they are eligible and haven't been notified yet
-			} elseif ( $twlNotified === 'no' && self::isTwlEligible( $globalUser ) ) {
-				// Set the twl-notified preference globally, so we'll know not to notify this user again
-				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' );
-				EchoEvent::create( [
-					'type' => 'twl-eligible',
-					'agent' => $user,
-				] );
-			}
-		} );
 	}
 }
