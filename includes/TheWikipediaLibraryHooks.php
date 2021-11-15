@@ -87,18 +87,24 @@ class TheWikipediaLibraryHooks {
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
 		if ( $config->get( 'TwlSendNotifications' ) ) {
 			$title = $wikiPage->getTitle();
-			$user = User::newFromIdentity( $userIdentity );
-			self::maybeSendNotification( $user, $title );
+			self::maybeSendNotification( $userIdentity, $title );
 		}
 	}
 
 	/**
 	 * Decide whether to notify the user based on central auth eligibility and global preference state
 	 *
-	 * @param User $user
+	 * @param UserIdentity $userIdentity
 	 * @param Title $title
 	 */
-	private static function maybeSendNotification( User $user, Title $title ) {
+	private static function maybeSendNotification( UserIdentity $userIdentity, Title $title ) {
+		$user = User::newFromIdentity( $userIdentity );
+		$services = MediaWikiServices::getInstance();
+		$pm = $services->getPermissionManager();
+		// Only proceed if we're dealing with a non-bot account
+		if ( $pm->userHasRight( $user, 'bot' ) ) {
+			return;
+		}
 		// Only proceed if we're dealing with an SUL account
 		$centralAuthUser = CentralAuthUser::getInstance( $user );
 		if ( !$centralAuthUser->isAttached() ) {
