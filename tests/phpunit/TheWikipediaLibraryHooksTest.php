@@ -1,4 +1,5 @@
 <?php
+
 use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 
@@ -86,13 +87,13 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testIsTwlEligibleUserNotified() {
 		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::Class )
-				->disableOriginalConstructor()
-				->disableOriginalClone()
-				->disableArgumentCloning()
-				->disallowMockingUnknownTypes()
-				->onlyMethods( [ 'getGlobalPreferencesValues' ] )
-				->setMockClassName( 'GlobalPreferencesFactory' )
-				->getMock();
+			->disableOriginalConstructor()
+			->disableOriginalClone()
+			->disableArgumentCloning()
+			->disallowMockingUnknownTypes()
+			->onlyMethods( [ 'getGlobalPreferencesValues' ] )
+			->setMockClassName( 'GlobalPreferencesFactory' )
+			->getMock();
 
 		if ( TheWikipediaLibraryHooks::isTwlEligible( $this->centralAuthUser1 ) ) {
 			$prefsFactory->method( 'getGlobalPreferencesValues' )
@@ -118,9 +119,9 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testIsTwlEligibleUserNotNotified() {
 		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::class )
-				->disableOriginalConstructor()
-				->onlyMethods( [ 'getGlobalPreferencesValues' ] )
-				->getMock();
+			->disableOriginalConstructor()
+			->onlyMethods( [ 'getGlobalPreferencesValues' ] )
+			->getMock();
 		if ( TheWikipediaLibraryHooks::isTwlEligible( $this->centralAuthUser2 ) ) {
 			$prefsFactory->method( 'getGlobalPreferencesValues' )
 				->willReturn( [
