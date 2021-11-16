@@ -38,7 +38,14 @@ class PreferenceHelper {
 		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
 		$prefs[$preference] = $value;
 		$user = $user->getInstanceForUpdate();
-		return $globalPref->setGlobalPreferences( $user, $prefs, RequestContext::getMain() );
+		// Set up the context and check if WikiPage is available from it
+		// Once preference definitions don't require the context, this can be removed
+		$context = RequestContext::getMain();
+		if ( $context->canUseWikiPage() ) {
+			return $globalPref->setGlobalPreferences( $user, $prefs, $context );
+		} else {
+			return false;
+		}
 	}
 
 	/**
