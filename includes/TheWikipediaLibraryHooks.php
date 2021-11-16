@@ -99,6 +99,10 @@ class TheWikipediaLibraryHooks {
 	 */
 	private static function maybeSendNotification( UserIdentity $userIdentity, Title $title ) {
 		$user = User::newFromIdentity( $userIdentity );
+		// Only proceed if we're dealing with a non-system account
+		if ( $user->isSystemUser() ) {
+			return;
+		}
 		$services = MediaWikiServices::getInstance();
 		$pm = $services->getPermissionManager();
 		// Only proceed if we're dealing with a non-bot account
