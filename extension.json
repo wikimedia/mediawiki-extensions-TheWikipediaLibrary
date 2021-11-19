@@ -39,8 +39,12 @@
 	},
 	"config": {
 		"TwlUserPrimaryUrl": {
-			"description": "URL that the Wikipedia Library notification links to",
+			"description": "URL for The Wikipedia Library website",
 			"value": "https://wikipedialibrary.wmflabs.org/"
+		},
+		"TwlUserSecondaryUrl": {
+			"description": "URL for The Wikipedia Library meta page",
+			"value": "https://meta.wikimedia.org/wiki/The_Wikipedia_Library"
 		},
 		"TwlSendNotifications": {
 			"description": "Whether to send Wikipedia Library notifications. If set to false, no notifications will be sent.",

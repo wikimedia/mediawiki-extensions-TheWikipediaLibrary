@@ -37,7 +37,7 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
 		return [
 			'url' => $config->get( 'TwlUserPrimaryUrl' ),
-			'label' => $this->msg( 'notification-twl-eligiblity-primarylink-text' )->text(),
+			'label' => null,
 		];
 	}
 
@@ -45,6 +45,40 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 	 * @inheritDoc
 	 */
 	public function getSecondaryLinks() {
-		return [];
+		return [ self::getSecondaryLinkWithMarkAsRead() ];
+	}
+
+	/**
+	 * Like getPrimaryLinkWithMarkAsRead(), but for a secondary link.
+	 * It alters the URL to add ?markasread=XYZ. When this link is followed,
+	 * the notification is marked as read.
+	 *
+	 * If the notification is a bundle, the notification IDs are added to the parameter value
+	 * separated by a "|". If cross-wiki notifications are enabled, a markasreadwiki parameter is
+	 * added.
+	 *
+	 * @return array
+	 */
+	final public function getSecondaryLinkWithMarkAsRead() {
+		global $wgEchoCrossWikiNotifications;
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
+		$secondaryLink = [
+			'url' => $config->get( 'TwlUserSecondaryUrl' ),
+			'label' => $this->msg( 'notification-twl-eligiblity-secondarylink-text' )->text(),
+			'icon' => 'article',
+		];
+		'@phan-var array $secondaryLink';
+		$eventIds = [ $this->event->getId() ];
+		if ( $this->getBundledIds() ) {
+			$eventIds = array_merge( $eventIds, $this->getBundledIds() );
+		}
+
+		$queryParams = [ 'markasread' => implode( '|', $eventIds ) ];
+		if ( $wgEchoCrossWikiNotifications ) {
+			$queryParams['markasreadwiki'] = wfWikiID();
+		}
+
+		$secondaryLink['url'] = wfAppendQuery( $secondaryLink['url'], $queryParams );
+		return $secondaryLink;
 	}
 }

@@ -32,10 +32,10 @@ class TheWikipediaLibraryHooks {
 				'EchoUserLocator::locateEventAgent'
 			],
 			'canNotifyAgent' => true,
-			'category' => 'system',
+			'category' => 'system-noemail',
 			'group' => 'positive',
 			'section' => 'message',
-			'presentation-model' => 'TwlEligiblePresentationModel'
+			'presentation-model' => 'TwlEligiblePresentationModel',
 		];
 
 		$icons['twl-eligible'] = [
