@@ -5,12 +5,14 @@
 			"Gomoko",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Pa2chant.bis",
+			"Pols12"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la Bibliothèque Wikipédia lorsqu’ils franchissent les seuils du compteur de modifications et d’ancienneté de leur compte",
-	"notification-header-twl-eligiblity": "Félicitations ! Vous êtes maintenant éligible à l’accès à la Bibliothèque Wikipédia.",
-	"notification-body-twl-eligiblity": "Cliquer ici pour naviguer dans une large collection de sources fiables et libres.",
+	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la Bibliothèque Wikipédia lorsqu’ils franchissent les seuils de nombre de modifications et d’ancienneté de leur compte",
+	"notification-header-twl-eligiblity": "Félicitations ! Vous avez maintenant accès à la Bibliothèque Wikipédia.",
+	"notification-body-twl-eligiblity": "Cliquer ici pour naviguer dans une large collection de sources fiables et gratuites.",
 	"notification-twl-eligiblity-primarylink-text": "Voir la bibliothèque"
 }

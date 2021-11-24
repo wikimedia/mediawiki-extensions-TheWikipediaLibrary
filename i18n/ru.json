@@ -3,12 +3,14 @@
 		"authors": [
 			"Okras",
 			"Redredsonia",
-			"Vlad5250"
+			"Vlad5250",
+			"DDPAT",
+			"Iluvatar"
 		]
 	},
 	"thewikipedialibrary": "БиблиотекаВикипедии",
 	"thewikipedialibrary-desc": "Уведомление пользователей об их праве на участие в Wikipedia Library, когда они достигают нужного числа правок и возраста учётной записи",
-	"notification-header-twl-eligiblity": "Поздравляем! Вы имеете право на доступ к базам данных Библиотеки Википедии.",
-	"notification-body-twl-eligiblity": "Заявка на свободный доступ к научным базам данных",
+	"notification-header-twl-eligiblity": "Поздравляем! Теперь у вас есть доступ к базам Библиотеки Википедии.",
+	"notification-body-twl-eligiblity": "Нажмите здесь, чтобы просмотреть обширную коллекцию бесплатных надежных источников.",
 	"notification-twl-eligiblity-primarylink-text": "Просмотр библиотеки"
 }
