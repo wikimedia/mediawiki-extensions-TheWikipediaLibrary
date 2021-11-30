@@ -8,5 +8,5 @@
 	"thewikipedialibrary-desc": "Ilmoittaa käyttäjille Wikipedian lähdekirjaston käyttöoikeudesta muokkausten lukumäärän ja käyttäjätunnuksen olemassaoloajan vaatimusten täytyttyä",
 	"notification-header-twl-eligiblity": "Onnittelut! Sinulla on nyt oikeus Wikipedian lähdekirjaston käyttöön.",
 	"notification-body-twl-eligiblity": "Klikkaa tästä selataksesi laajaa kokoelmaa vapaita luotettavia lähteitä.",
-	"notification-twl-eligiblity-primarylink-text": "Näytä kirjasto"
+	"notification-twl-eligiblity-secondarylink-text": "Wikipedian lähdekirjasto"
 }

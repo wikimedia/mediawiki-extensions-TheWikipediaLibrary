@@ -14,5 +14,5 @@
 	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la Bibliothèque Wikipédia lorsqu’ils franchissent les seuils de nombre de modifications et d’ancienneté de leur compte",
 	"notification-header-twl-eligiblity": "Félicitations ! Vous avez maintenant accès à la Bibliothèque Wikipédia.",
 	"notification-body-twl-eligiblity": "Cliquer ici pour naviguer dans une large collection de sources fiables et gratuites.",
-	"notification-twl-eligiblity-primarylink-text": "Voir la bibliothèque"
+	"notification-twl-eligiblity-secondarylink-text": "La bibliothèque Wikipédia"
 }
