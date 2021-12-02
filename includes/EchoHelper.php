@@ -10,6 +10,7 @@
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use EchoEvent;
+use EchoNotification;
 use EchoNotificationMapper;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserIdentity;
@@ -48,8 +49,8 @@ class EchoHelper {
 		] )
 		) {
 			return true;
-		} else {
-			return false;
 		}
+
+		return false;
 	}
 }
