@@ -10,7 +10,6 @@ namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
-use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
 use User;
@@ -27,11 +26,8 @@ class PreferenceHelper {
 	public static function setGlobalPreference( User $user, string $preference, string $value ) {
 		/** @var GlobalPreferencesFactory $globalPref */
 		$globalPref = MediaWikiServices::getInstance()->getPreferencesFactory();
+		// Need GlobalPreferences extension.
 		if ( !$globalPref instanceof GlobalPreferencesFactory ) {
-			// Need GlobalPreferences extension.
-			LoggerFactory::getInstance( 'TheWikipediaLibrary' )->warning(
-				'Not setting user preference, GlobalPreferences is not available'
-			);
 			return false;
 		}
 		'@phan-var GlobalPreferencesFactory $globalPref';
@@ -57,11 +53,8 @@ class PreferenceHelper {
 	public static function getGlobalPreference( User $user, string $preference ) {
 		/** @var GlobalPreferencesFactory $globalPref */
 		$globalPref = MediaWikiServices::getInstance()->getPreferencesFactory();
+		// Need GlobalPreferences extension.
 		if ( !$globalPref instanceof GlobalPreferencesFactory ) {
-			// Need GlobalPreferences extension.
-			LoggerFactory::getInstance( 'TheWikipediaLibrary' )->warning(
-				'Not getting user preference, GlobalPreferences is not available'
-			);
 			return null;
 		}
 		'@phan-var GlobalPreferencesFactory $globalPref';

@@ -2,7 +2,6 @@
 
 use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
-use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
@@ -77,11 +76,8 @@ class TheWikipediaLibraryHooks {
 		RevisionRecord $revisionRecord,
 		EditResult $editResult
 	) {
+		// Need CentralAuth extension.
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
-			// Need CentralAuth extension.
-			LoggerFactory::getInstance( 'TheWikipediaLibrary' )->warning(
-				'Not checking eligibility, CentralAuth is not available'
-			);
 			return;
 		}
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
