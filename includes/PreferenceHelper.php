@@ -39,9 +39,9 @@ class PreferenceHelper {
 		$context = RequestContext::getMain();
 		if ( $context->canUseWikiPage() ) {
 			return $globalPref->setGlobalPreferences( $user, $prefs, $context );
-		} else {
-			return false;
 		}
+
+		return false;
 	}
 
 	/**

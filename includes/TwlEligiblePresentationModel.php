@@ -45,7 +45,7 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 	 * @inheritDoc
 	 */
 	public function getSecondaryLinks() {
-		return [ self::getSecondaryLinkWithMarkAsRead() ];
+		return [ $this->getSecondaryLinkWithMarkAsRead() ];
 	}
 
 	/**

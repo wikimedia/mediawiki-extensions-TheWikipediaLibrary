@@ -151,11 +151,8 @@ class TheWikipediaLibraryHooks {
 			(int)wfTimestamp( TS_UNIX, $centralAuthUser->getRegistration() );
 		$minimumAge = $twlRegistrationDays * 24 * 3600;
 		$globalEditCount = $centralAuthUser->getGlobalEditCount();
+
 		// Check eligibility
-		if ( $globalEditCount >= $twlEditCount && $accountAge >= $minimumAge ) {
-			return true;
-		} else {
-			return false;
-		}
+		return $globalEditCount >= $twlEditCount && $accountAge >= $minimumAge;
 	}
 }
