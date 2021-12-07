@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Adriendelucca"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Reizhiad evit kas keloù da implijerien Wikipedia",
-	"notification-header-twl-eligiblity": "Gourc'hemennoù deoc'h ! Gallout a rit lakaat hoc'h anv evit gallout implijout levraoueg diazoù roadennoù Wikipedia.",
+	"notification-header-twl-eligiblity": "Gourc'hemennoù deoc'h ! Gallout a rit lakaat hoc'h anv evit gallout implijout Levraoueg Wikipedia.",
 	"notification-body-twl-eligiblity": "Lakait hoc'h anv evit gallout ober enklaskoù digoust gant an diazoù roadennoù",
 	"notification-twl-eligiblity-primarylink-text": "Gwelet an diazoù roadennoù hegerz"
 }
