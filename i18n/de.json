@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Rummskartoffel",
+			"Sandro Halank (WMDE)"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Ermöglicht die Benachrichtigung von Benutzern über ihre Berechtigung für die Wikipedia-Bibliothek, falls ihr Bearbeitungszähler und das Alter des Benutzerkontos Schwellen überschreitet",
+	"thewikipedialibrary-desc": "Benutzer benachrichtigen, wenn sie genug Bearbeitungen haben und ihr Benutzerkonto alt genug ist, um auf The Wikipedia Library zugreifen zu dürfen",
 	"notification-header-twl-eligiblity": "Herzlichen Glückwunsch! Du bist zum Zugriff auf die Wikipedia-Bibliothek berechtigt.",
 	"notification-body-twl-eligiblity": "Bewerbung für freien Zugriff auf Forschungsdatenbanken",
-	"notification-twl-eligiblity-secondarylink-text": "Die Wikipedia-Bibliothek",
+	"notification-twl-eligiblity-secondarylink-text": "The Wikipedia Library",
 	"notification-twl-eligiblity-primarylink-text": "Verfügbare Datenbanken ansehen"
 }

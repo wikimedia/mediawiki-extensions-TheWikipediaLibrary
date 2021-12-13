@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"MarcoAurelio"
+			"MarcoAurelio",
+			"Madamebiblio"
 		]
 	},
 	"thewikipedialibrary": "La biblioteca de Wikipedia",
-	"thewikipedialibrary-desc": "Sistema para notificar a los usurios de Wikipedia",
+	"thewikipedialibrary-desc": "Notificar a los usuarios que pueden acceder a la Biblioteca de Wikipedia cuando superen los umbrales de número de ediciones y antigüedad de la cuenta",
 	"notification-header-twl-eligiblity": "¡Felicidades! Se te permite acceder a Wikipedia Library.",
 	"notification-body-twl-eligiblity": "Solicita acceso libre a las bases de datos de investigación",
 	"notification-twl-eligiblity-secondarylink-text": "La biblioteca de Wikipedia",

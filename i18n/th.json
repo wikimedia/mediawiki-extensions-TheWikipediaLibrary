@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Karit"
+			"Karit",
+			"Patsagorn Y."
 		]
 	},
+	"thewikipedialibrary-desc": "เตือนผู้ใช้เมื่อพวกเขามีจำนวนการแก้ไขและอายุมากพอที่จะเข้าถึงห้องสมัดวิกิพีเดีย",
 	"notification-body-twl-eligiblity": "สมัครเพื้อเข้าใข้ฐานข้อมูลการวิจัยฟรี",
 	"notification-twl-eligiblity-secondarylink-text": "ห้องสมุดวิกิพีเดีย",
 	"notification-twl-eligiblity-primarylink-text": "ดูฐานข้อมูลที่สามารถใข้ได้"

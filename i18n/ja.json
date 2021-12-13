@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Suyama"
+			"Suyama",
+			"Omotecho"
 		]
 	},
+	"thewikipedialibrary": "ウィキペディア図書館",
+	"thewikipedialibrary-desc": "編集回数と登録期間のしきい値を超えた時、利用者に資格取得を通知する",
+	"notification-twl-eligiblity-secondarylink-text": "ウィキペディア図書館",
 	"notification-twl-eligiblity-primarylink-text": "利用可能なデータベースを参照"
 }

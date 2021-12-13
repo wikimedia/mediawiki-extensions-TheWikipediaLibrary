@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Sabelöga"
 		]
 	},
+	"thewikipedialibrary-desc": "Meddelar användare om att de är berättigade för Wikimediabiblioteket när de nått antalet redigeringar och kontoålder",
 	"notification-twl-eligiblity-primarylink-text": "Visa tillgängliga databaser"
 }

@@ -6,6 +6,7 @@
 		]
 	},
 	"thewikipedialibrary": "VikipedijosBiblioteka",
+	"thewikipedialibrary-desc": "Pranešti vartotojams apie jų prieigą prie Vikipedijos bibliotekos, kai jie peržengia redagavimo skaičiaus ir paskyros amžiaus ribas",
 	"notification-header-twl-eligiblity": "Sveikiname! Jūs turite prieigą prie Vikipedijos bibliotekos.",
 	"notification-body-twl-eligiblity": "Prašymas nemokamai naudotis mokslo duomenų bazėmis",
 	"notification-twl-eligiblity-secondarylink-text": "Vikipedijos Biblioteka",
