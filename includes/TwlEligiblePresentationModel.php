@@ -75,7 +75,7 @@ class TwlEligiblePresentationModel extends EchoEventPresentationModel {
 
 		$queryParams = [ 'markasread' => implode( '|', $eventIds ) ];
 		if ( $wgEchoCrossWikiNotifications ) {
-			$queryParams['markasreadwiki'] = wfWikiID();
+			$queryParams['markasreadwiki'] = WikiMap::getCurrentWikiId();
 		}
 
 		$secondaryLink['url'] = wfAppendQuery( $secondaryLink['url'], $queryParams );
