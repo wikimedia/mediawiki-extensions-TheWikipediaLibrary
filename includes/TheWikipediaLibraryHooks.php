@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 use MediaWiki\MediaWikiServices;

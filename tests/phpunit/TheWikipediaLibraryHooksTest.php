@@ -1,6 +1,7 @@
 <?php
 
 use GlobalPreferences\GlobalPreferencesFactory;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 
 /**
