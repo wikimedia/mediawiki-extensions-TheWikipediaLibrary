@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pikne"
+		]
+	},
+	"thewikipedialibrary-desc": "Teavitab kasutajat, kui tema muudatuste arv ja konto vanus ületavad Vikipeedia raamatukogu kasutamiseks nõutava läve.",
+	"notification-header-twl-eligiblity": "Palju õnne! Vastad nüüd Vikipeedia raamatukogu kasutamiseks seatud nõuetele.",
+	"notification-body-twl-eligiblity": "Klõpsa siia, et sirvida tasuta usaldusväärsete allikate suurt kogumikku.",
+	"notification-twl-eligiblity-secondarylink-text": "Vikipeedia raamatukogu"
+}
