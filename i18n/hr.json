@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"MaGa"
+		]
+	},
+	"thewikipedialibrary": "Wikipedijina knjižnica",
+	"thewikipedialibrary-desc": "Obavijest suradnicima o ispunjavanju uvjeta za Wikipedijinu knjižnicu onda kada prijeđu pragove broja uređivanja i starosti računa",
+	"notification-header-twl-eligiblity": "Čestitamo! Zadovoljili ste uvjete Wikipedijine knjižnice.",
+	"notification-body-twl-eligiblity": "Da biste pregledali veliku zbirku slobodnih pouzdanih izvora kliknite ovdje.",
+	"notification-twl-eligiblity-secondarylink-text": "Wikipedijina knjižnica"
+}
