@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"NGC 54"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Varsle brukere om at de kan delta i Wikipedia Library når de når terskelen for antall redigeringer og kontoalder",
 	"notification-header-twl-eligiblity": "Gratulerer! Du kan nå få tilgang til Wikipedia Library.",
 	"notification-body-twl-eligiblity": "Søk om gratis tilgang til forskningsdatabaser",
-	"notification-twl-eligiblity-secondarylink-text": "Wikipedia Library"
+	"notification-twl-eligiblity-secondarylink-text": "Biblioteca Wikipedia"
 }
