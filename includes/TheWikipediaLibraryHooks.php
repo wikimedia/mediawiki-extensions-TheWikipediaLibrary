@@ -95,46 +95,49 @@ class TheWikipediaLibraryHooks {
 	 * @param Title $title
 	 */
 	private static function maybeSendNotification( UserIdentity $userIdentity, Title $title ) {
-		$services = MediaWikiServices::getInstance();
-		$user = $services->getUserFactory()->newFromUserIdentity( $userIdentity );
-		// Only proceed if we're dealing with a non-system account
-		if ( $user->isSystemUser() ) {
-			return;
-		}
-		$pm = $services->getPermissionManager();
-		// Only proceed if we're dealing with a non-bot account
-		if ( $pm->userHasRight( $user, 'bot' ) ) {
-			return;
-		}
-		// Only proceed if we're dealing with an SUL account
-		$centralAuthUser = CentralAuthUser::getInstance( $user );
-		if ( !$centralAuthUser->isAttached() ) {
-			return;
-		}
-		// Only proceed if we're dealing with an eligible account
-		if ( !self::isTwlEligible( $centralAuthUser ) ) {
-			return;
-		}
-		// Only proceed if we haven't already notified this user
-		// First check the global preference.
-		$twlNotifiedPref = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
-		if ( $twlNotifiedPref === 'yes' ) {
-			return;
-			// Set the twl-notified preference to 'no' if we haven't notified this user
-			// We've added this extra step to ensure that global preferences may be modified
-			// to avoid multiple notifications in case the preference isn't saved before the next edit
-		} elseif ( $twlNotifiedPref === null ) {
-			PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
-			return;
-			// Notify the user if:
-			// - they haven't been notified yet
-			// - we can sucessfully set the preference
-		} elseif (
-			$twlNotifiedPref === 'no'
-			&& PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' )
-		) {
-			EchoHelper::send( $user, $title );
-		}
+		// Wrap in a POSTSEND deferred update to avoid blocking the HTTP response
+		DeferredUpdates::addCallableUpdate( function () use ( $userIdentity, $title ) {
+			$services = MediaWikiServices::getInstance();
+			$user = $services->getUserFactory()->newFromUserIdentity( $userIdentity );
+			// Only proceed if we're dealing with a non-system account
+			if ( $user->isSystemUser() ) {
+				return;
+			}
+			$pm = $services->getPermissionManager();
+			// Only proceed if we're dealing with a non-bot account
+			if ( $pm->userHasRight( $user, 'bot' ) ) {
+				return;
+			}
+			// Only proceed if we're dealing with an SUL account
+			$centralAuthUser = CentralAuthUser::getInstance( $user );
+			if ( !$centralAuthUser->isAttached() ) {
+				return;
+			}
+			// Only proceed if we're dealing with an eligible account
+			if ( !self::isTwlEligible( $centralAuthUser ) ) {
+				return;
+			}
+			// Only proceed if we haven't already notified this user
+			// First check the global preference.
+			$twlNotifiedPref = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
+			if ( $twlNotifiedPref === 'yes' ) {
+				return;
+				// Set the twl-notified preference to 'no' if we haven't notified this user
+				// We've added this extra step to ensure that global preferences may be modified
+				// to avoid multiple notifications in case the preference isn't saved before the next edit
+			} elseif ( $twlNotifiedPref === null ) {
+				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
+				return;
+				// Notify the user if:
+				// - they haven't been notified yet
+				// - we can sucessfully set the preference
+			} elseif (
+				$twlNotifiedPref === 'no'
+				&& PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' )
+			) {
+				EchoHelper::send( $user, $title );
+			}
+		} );
 	}
 
 	/**
