@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"ANukuma",
 			"Daud I.F. Argana",
 			"PutriAmalia1991",
 			"Rachmat04"
 		]
 	},
-	"thewikipedialibrary-desc": "Sistem untuk memberitahu Pengguna Wikipedia",
-	"notification-header-twl-eligiblity": "Tahniah! Anda layak untuk Perpustakaan Wikipedia",
+	"thewikipedialibrary-desc": "Beritahukan pengguna akan kelayakan mereka untuk mengakses Perpustakaan Wikipedia ketika jumlah suntingan mereka dan usia akunnya telah memenuhi syarat",
+	"notification-header-twl-eligiblity": "Selamat! Anda memenuhi syarat untuk mengakses Perpustakaan Wikipedia.",
 	"notification-body-twl-eligiblity": "Klik di sini untuk menjelajahi bermacam-macam koleksi dari sumber rujukan yang andal dan bebas.",
 	"notification-twl-eligiblity-secondarylink-text": "Perpustakaan Wikipedia"
 }
