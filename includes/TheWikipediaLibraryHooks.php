@@ -113,25 +113,26 @@ class TheWikipediaLibraryHooks {
 			if ( !$centralAuthUser->isAttached() ) {
 				return;
 			}
+			// Only proceed if we haven't already notified this user
+			$twlNotifiedPref = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
+			if ( $twlNotifiedPref === 'yes' ) {
+				return;
+			}
 			// Only proceed if we're dealing with an eligible account
 			if ( !self::isTwlEligible( $centralAuthUser ) ) {
 				return;
 			}
-			// Only proceed if we haven't already notified this user
-			// First check the global preference.
-			$twlNotifiedPref = PreferenceHelper::getGlobalPreference( $user, 'twl-notified' );
-			if ( $twlNotifiedPref === 'yes' ) {
-				return;
-				// Set the twl-notified preference to 'no' if we haven't notified this user
-				// We've added this extra step to ensure that global preferences may be modified
-				// to avoid multiple notifications in case the preference isn't saved before the next edit
-			} elseif ( $twlNotifiedPref === null ) {
+			// Set the twl-notified preference to 'no' if we haven't notified this user
+			// We've added this extra step to ensure that global preferences may be modified
+			// to avoid multiple notifications in case the preference isn't saved before the next edit
+			if ( $twlNotifiedPref === null ) {
 				PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'no' );
 				return;
-				// Notify the user if:
-				// - they haven't been notified yet
-				// - we can sucessfully set the preference
-			} elseif (
+			}
+			// Notify the user if:
+			// - they haven't been notified yet
+			// - we can sucessfully set the preference
+			if (
 				$twlNotifiedPref === 'no'
 				&& PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' )
 			) {
@@ -149,14 +150,21 @@ class TheWikipediaLibraryHooks {
 	 */
 	public static function isTwlEligible( CentralAuthUser $centralAuthUser ) {
 		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
-		$twlEditCount = $config->get( 'TwlEditCount' );
+
 		$twlRegistrationDays = $config->get( 'TwlRegistrationDays' );
+		$minimumAge = $twlRegistrationDays * 24 * 3600;
 		$accountAge = (int)wfTimestamp( TS_UNIX ) -
 			(int)wfTimestamp( TS_UNIX, $centralAuthUser->getRegistration() );
-		$minimumAge = $twlRegistrationDays * 24 * 3600;
-		$globalEditCount = $centralAuthUser->getGlobalEditCount();
+		if ( $accountAge < $minimumAge ) {
+			return false;
+		}
 
-		// Check eligibility
-		return $globalEditCount >= $twlEditCount && $accountAge >= $minimumAge;
+		$twlEditCount = $config->get( 'TwlEditCount' );
+		$globalEditCount = $centralAuthUser->getGlobalEditCount();
+		if ( $globalEditCount < $twlEditCount ) {
+			return false;
+		}
+
+		return true;
 	}
 }
