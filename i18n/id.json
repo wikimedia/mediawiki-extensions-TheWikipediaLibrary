@@ -3,9 +3,10 @@
 		"authors": [
 			"PutriAmalia1991",
 			"Rachmat04",
-			"Daud I.F. Argana"
+			"Daud I.F. Argana",
+			"ANukuma"
 		]
 	},
-	"thewikipedialibrary-desc": "Sistem untuk memberitahu Pengguna Wikipedia",
+	"thewikipedialibrary-desc": "Beritahukan pengguna akan kelayakan mereka untuk mengakses Perpustakaan Wikipedia ketika jumlah suntingan mereka dan usia akunnya telah memenuhi syarat",
 	"notification-twl-eligiblity-secondarylink-text": "Perpustakaan Wikipedia"
 }
