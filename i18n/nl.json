@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Romaine"
+		]
+	},
+	"thewikipedialibrary-desc": "Gebruikers informeren over hun geschiktheid voor de Wikipedia-bibliotheek wanneer ze de drempels voor het aantal bewerkingen en de accountleeftijd overschrijden",
+	"notification-header-twl-eligiblity": "Gefeliciteerd! U komt nu in aanmerking voor de Wikipedia-bibliotheek.",
+	"notification-body-twl-eligiblity": "Klik hier om door een brede verzameling gratis betrouwbare bronnen te bladeren.",
+	"notification-twl-eligiblity-secondarylink-text": "De Wikipedia-bibliotheek"
+}
