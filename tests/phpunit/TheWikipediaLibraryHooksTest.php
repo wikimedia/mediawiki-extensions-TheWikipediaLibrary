@@ -2,6 +2,7 @@
 
 use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\TheWikipediaLibrary\Hooks as TheWikipediaLibraryHooks;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 
 /**
@@ -84,7 +85,7 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \TheWikipediaLibraryHooks::isTwlEligible()
+	 * @covers \MediaWiki\Extension\TheWikipediaLibrary\Hooks::isTwlEligible()
 	 */
 	public function testIsTwlEligibleUserNotified() {
 		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::Class )
@@ -116,7 +117,7 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers \TheWikipediaLibraryHooks::isTwlEligible()
+	 * @covers \MediaWiki\Extension\TheWikipediaLibrary\Hooks::isTwlEligible()
 	 */
 	public function testIsTwlEligibleUserNotNotified() {
 		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::class )
