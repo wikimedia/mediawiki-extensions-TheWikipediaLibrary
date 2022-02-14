@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Saederup92"
+			"Saederup92",
+			"Jhertel"
 		]
 	},
 	"thewikipedialibrary": "Wikipediabiblioteket",
-	"notification-twl-eligiblity-secondarylink-text": "Wikipedia biblioteket",
+	"notification-twl-eligiblity-secondarylink-text": "Wikipedia-biblioteket",
 	"notification-twl-eligiblity-primarylink-text": "Vis tilgængelige databaser"
 }
