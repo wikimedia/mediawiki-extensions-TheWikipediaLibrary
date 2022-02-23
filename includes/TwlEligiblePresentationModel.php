@@ -1,5 +1,9 @@
 <?php
+namespace MediaWiki\Extension\TheWikipediaLibrary;
+
+use EchoEventPresentationModel;
 use MediaWiki\MediaWikiServices;
+use WikiMap;
 
 /*
 	When creating a new notification type for Echo, you need to

@@ -22,10 +22,6 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"TheWikipediaLibraryHooks": "includes/TheWikipediaLibraryHooks.php",
-		"TwlEligiblePresentationModel": "includes/TwlEligiblePresentationModel.php"
-	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\TheWikipediaLibrary\\": "includes/"
 	},
@@ -33,9 +29,9 @@
 		"twl-notified": null
 	},
 	"Hooks": {
-		"PageSaveComplete": "TheWikipediaLibraryHooks::onPageSaveComplete",
-		"BeforeCreateEchoEvent": "TheWikipediaLibraryHooks::onBeforeCreateEchoEvent",
-		"GetPreferences": "TheWikipediaLibraryHooks::onGetPreferences"
+		"PageSaveComplete": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onPageSaveComplete",
+		"BeforeCreateEchoEvent": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onBeforeCreateEchoEvent",
+		"GetPreferences": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onGetPreferences"
 	},
 	"config": {
 		"TwlUserPrimaryUrl": {

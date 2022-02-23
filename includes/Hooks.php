@@ -1,12 +1,18 @@
 <?php
 
+namespace MediaWiki\Extension\TheWikipediaLibrary;
+
+use DeferredUpdates;
+use EchoAttributeManager;
+use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
-use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
 use MediaWiki\User\UserIdentity;
+use Title;
+use User;
+use WikiPage;
 
 /**
  * TheWikipediaLibrary extension hooks
@@ -15,7 +21,7 @@ use MediaWiki\User\UserIdentity;
  * @ingroup Extensions
  * @license MIT
  */
-class TheWikipediaLibraryHooks {
+class Hooks {
 
 	/**
 	 * Add The Wikipedia Library - eligibility events to Echo
@@ -35,7 +41,7 @@ class TheWikipediaLibraryHooks {
 			'category' => 'system-noemail',
 			'group' => 'positive',
 			'section' => 'message',
-			'presentation-model' => 'TwlEligiblePresentationModel',
+			'presentation-model' => TwlEligiblePresentationModel::class,
 		];
 
 		$icons['twl-eligible'] = [
@@ -131,7 +137,7 @@ class TheWikipediaLibraryHooks {
 			}
 			// Notify the user if:
 			// - they haven't been notified yet
-			// - we can sucessfully set the preference
+			// - we can successfully set the preference
 			if (
 				$twlNotifiedPref === 'no'
 				&& PreferenceHelper::setGlobalPreference( $user, 'twl-notified', 'yes' )
@@ -161,10 +167,7 @@ class TheWikipediaLibraryHooks {
 
 		$twlEditCount = $config->get( 'TwlEditCount' );
 		$globalEditCount = $centralAuthUser->getGlobalEditCount();
-		if ( $globalEditCount < $twlEditCount ) {
-			return false;
-		}
 
-		return true;
+		return $globalEditCount >= $twlEditCount;
 	}
 }
