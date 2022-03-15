@@ -3,12 +3,14 @@
 		"authors": [
 			"Macofe",
 			"Madamebiblio",
-			"MarcoAurelio"
+			"MarcoAurelio",
+			"-jem-",
+			"Suecarmol"
 		]
 	},
 	"thewikipedialibrary": "La biblioteca de Wikipedia",
 	"thewikipedialibrary-desc": "Notificar a los usuarios que pueden acceder a la Biblioteca de Wikipedia cuando superen los umbrales de número de ediciones y antigüedad de la cuenta",
-	"notification-header-twl-eligiblity": "¡Felicitaciones! Ahora eres ahora elegible para La Biblioteca de Wikipedia.",
+	"notification-header-twl-eligiblity": "¡Felicitaciones! Ya puedes solicitar acceso a La Biblioteca de Wikipedia.",
 	"notification-body-twl-eligiblity": "Explora una amplia colección de fuentes fiables libres.",
 	"notification-twl-eligiblity-primarylink-text": "Ver la biblioteca"
 }
