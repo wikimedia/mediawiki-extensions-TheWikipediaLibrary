@@ -6,5 +6,6 @@
 	},
 	"thewikipedialibrary-desc": "Notifică utilizatorii despre eligibilitatea lor pentru Biblioteca Wikipedia când trec de pragurile pentru numărul de editări și vârstei contului",
 	"notification-header-twl-eligiblity": "Felicitări! Sunteți acum {{GENDER:|eligibil|eligibilă}} pentru Biblioteca Wikipedia.",
-	"notification-body-twl-eligiblity": "Apăsați aici pentru a naviga pe o colecție largă de surse de încredere gratuite."
+	"notification-body-twl-eligiblity": "Apăsați aici pentru a naviga pe o colecție largă de surse de încredere gratuite.",
+	"notification-twl-eligiblity-secondarylink-text": "Biblioteca Wikipedia"
 }
