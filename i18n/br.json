@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Adriendelucca",
-			"Fulup"
+			"Fulup",
+			"Huñvreüs"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Reizhiad evit kas keloù da implijerien Wikipedia",
 	"notification-header-twl-eligiblity": "Gourc'hemennoù deoc'h ! Gallout a rit lakaat hoc'h anv evit gallout implijout Levraoueg Wikipedia.",
-	"notification-body-twl-eligiblity": "Lakait hoc'h anv evit gallout ober enklaskoù digoust gant an diazoù roadennoù",
+	"notification-body-twl-eligiblity": "Klikit amañ evit furchal en un dastumad ledan a darzhoù frank.",
 	"notification-twl-eligiblity-secondarylink-text": "Levraoueg Wikipedia"
 }
