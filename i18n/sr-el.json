@@ -5,5 +5,6 @@
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Sistem za obaveštavanje korisnika Vikipedije"
+	"thewikipedialibrary-desc": "Sistem za obaveštavanje korisnika Vikipedije",
+	"notification-twl-eligiblity-secondarylink-text": "Vikipedijina biblioteka"
 }
