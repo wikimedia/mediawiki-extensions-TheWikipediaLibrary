@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use DeferredUpdates;
 use EchoAttributeManager;
+use EchoUserLocator;
 use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
@@ -35,7 +36,7 @@ class Hooks {
 	) {
 		$notifications['twl-eligible'] = [
 			EchoAttributeManager::ATTR_LOCATORS => [
-				'EchoUserLocator::locateEventAgent'
+				[ [ EchoUserLocator::class, 'locateEventAgent' ] ],
 			],
 			'canNotifyAgent' => true,
 			'category' => 'system-noemail',
