@@ -4,5 +4,8 @@
 			"Eleassar"
 		]
 	},
-	"thewikipedialibrary-desc": "Obveščanje uporabnikov o njihovi upravičenosti do Knjižnice Wikipedije, ko presežejo prag števila urejanj in starosti računa."
+	"thewikipedialibrary-desc": "Obveščanje uporabnikov o njihovi upravičenosti do Knjižnice Wikipedije, ko presežejo prag števila urejanj in starosti računa.",
+	"notification-header-twl-eligiblity": "Čestitamo! Izpolnili ste pogoje Knjižnice Wikipedije.",
+	"notification-body-twl-eligiblity": "Kliknite tukaj za brskanje po široki zbirki prostih in zanesljivih virov.",
+	"notification-twl-eligiblity-secondarylink-text": "Knjižnica Wikipedije"
 }
