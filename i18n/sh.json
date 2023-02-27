@@ -4,5 +4,6 @@
 			"Vlad5250"
 		]
 	},
-	"thewikipedialibrary-desc": "Obavještavanje korisnika o ispunjavanju uvjeta za Wikipedijinu knjižnicu onda kada prijeđu pragove broja izmjena i starosti računa"
+	"thewikipedialibrary-desc": "Obavještavanje korisnika o ispunjavanju uvjeta za Wikipedijinu knjižnicu onda kada prijeđu pragove broja izmjena i starosti računa",
+	"notification-twl-eligiblity-secondarylink-text": "Vikipedijina biblioteka"
 }
