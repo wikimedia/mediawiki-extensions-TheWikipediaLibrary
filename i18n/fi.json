@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Alluk.",
-			"Stryn"
+			"Stryn",
+			"Pyscowicz"
 		]
 	},
 	"thewikipedialibrary-desc": "Ilmoittaa käyttäjille Wikipedian lähdekirjaston käyttöoikeudesta muokkausten lukumäärän ja käyttäjätunnuksen olemassaoloajan vaatimusten täytyttyä",
 	"notification-header-twl-eligiblity": "Onnittelut! Sinulla on nyt oikeus Wikipedian lähdekirjaston käyttöön.",
 	"notification-body-twl-eligiblity": "Klikkaa tästä selataksesi laajaa kokoelmaa vapaita luotettavia lähteitä.",
-	"notification-twl-eligiblity-secondarylink-text": "Wikipedian lähdekirjasto"
+	"notification-twl-eligiblity-secondarylink-text": "Wikipedian Lähdekirjasto"
 }
