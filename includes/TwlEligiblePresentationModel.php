@@ -3,7 +3,7 @@ namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use EchoEventPresentationModel;
 use MediaWiki\MediaWikiServices;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 
 /*
 	When creating a new notification type for Echo, you need to
