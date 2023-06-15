@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Msz2001"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "System powiadamiania użytkowników Wikipedii",
-	"notification-header-twl-eligiblity": "Gratulacje! Masz prawo dostępu do baz danych Biblioteki Wikipedii",
+	"notification-header-twl-eligiblity": "Gratulacje! Kwalifikujesz się teraz do korzystania z Biblioteki Wikipedii.",
+	"notification-body-twl-eligiblity": "Kliknij tutaj, aby przejrzeć szeroki zbiór bezpłatnych, wiarygodnych źródeł.",
 	"notification-twl-eligiblity-secondarylink-text": "Biblioteka Wikipedii"
 }
