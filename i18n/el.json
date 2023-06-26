@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"GR"
+			"GR",
+			"UnchartedViolator"
 		]
 	},
+	"thewikipedialibrary-desc": "Ειδοποιήστε τους χρήστες για την καταλληλότητά τους για τη Βιβλιοθήκη της Wikipedia όταν υπερβούν τον αριθμό επεξεργασίας και τα όρια ηλικίας λογαριασμού",
+	"notification-twl-eligiblity-secondarylink-text": "Η βιβλιοθήκη της Wikipedia",
 	"notification-twl-eligiblity-primarylink-text": "Δες τις διαθέσιμες βάσεις δεδομένων."
 }
