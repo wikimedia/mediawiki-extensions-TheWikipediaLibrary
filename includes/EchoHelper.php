@@ -13,8 +13,8 @@ use EchoEvent;
 use EchoNotification;
 use EchoNotificationMapper;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use Title;
 
 class EchoHelper {
 

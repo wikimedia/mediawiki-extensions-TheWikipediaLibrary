@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
+use MediaWiki\Title\Title;
 
 /**
  * @group TheWikipediaLibrary
