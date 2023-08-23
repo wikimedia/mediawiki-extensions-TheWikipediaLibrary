@@ -106,8 +106,8 @@ class Hooks {
 		DeferredUpdates::addCallableUpdate( function () use ( $userIdentity, $title ) {
 			$services = MediaWikiServices::getInstance();
 			$user = $services->getUserFactory()->newFromUserIdentity( $userIdentity );
-			// Only proceed if we're dealing with a non-system account
-			if ( $user->isSystemUser() ) {
+			// Only proceed if we're dealing with an authenticated non-system account
+			if ( $user->isAnon() || $user->isTemp() || $user->isSystemUser() ) {
 				return;
 			}
 			$pm = $services->getPermissionManager();
