@@ -8,8 +8,10 @@ use EchoUserLocator;
 use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
+use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use User;
@@ -22,7 +24,10 @@ use WikiPage;
  * @ingroup Extensions
  * @license MIT
  */
-class Hooks {
+class Hooks implements
+	PageSaveCompleteHook,
+	GetPreferencesHook
+{
 
 	/**
 	 * Add The Wikipedia Library - eligibility events to Echo
@@ -55,7 +60,7 @@ class Hooks {
 	 * @param User $user
 	 * @param array &$preferences
 	 */
-	public static function onGetPreferences( User $user, array &$preferences ) {
+	public function onGetPreferences( $user, &$preferences ) {
 		$preferences['twl-notified'] = [
 			'type' => 'api'
 		];
@@ -76,13 +81,13 @@ class Hooks {
 	 * @param RevisionRecord $revisionRecord
 	 * @param EditResult $editResult
 	 */
-	public static function onPageSaveComplete(
-		WikiPage $wikiPage,
-		UserIdentity $userIdentity,
-		string $summary,
-		int $flags,
-		RevisionRecord $revisionRecord,
-		EditResult $editResult
+	public function onPageSaveComplete(
+		$wikiPage,
+		$userIdentity,
+		$summary,
+		$flags,
+		$revisionRecord,
+		$editResult
 	) {
 		// Need CentralAuth extension.
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {

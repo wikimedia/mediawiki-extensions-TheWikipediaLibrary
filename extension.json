@@ -29,9 +29,14 @@
 		"twl-notified": null
 	},
 	"Hooks": {
-		"PageSaveComplete": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onPageSaveComplete",
+		"PageSaveComplete": "main",
 		"BeforeCreateEchoEvent": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onBeforeCreateEchoEvent",
-		"GetPreferences": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onGetPreferences"
+		"GetPreferences": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks"
+		}
 	},
 	"config": {
 		"TwlUserPrimaryUrl": {
