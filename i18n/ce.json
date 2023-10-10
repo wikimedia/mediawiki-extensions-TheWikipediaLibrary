@@ -5,5 +5,6 @@
 		]
 	},
 	"notification-header-twl-eligiblity": "Декъалдар! ХӀинца хьо Википедин Библиотекин базашна тӀекхочу.",
-	"notification-body-twl-eligiblity": "Мах боцуш, тешам болу хьостийн шуьйра коллекци хьажархьама, кхуза тӀетаӀайе."
+	"notification-body-twl-eligiblity": "Мах боцуш, тешам болу хьостийн шуьйра коллекци хьажархьама, кхуза тӀетаӀайе.",
+	"notification-twl-eligiblity-secondarylink-text": "Википедин библиотека"
 }
