@@ -30,12 +30,15 @@
 	},
 	"Hooks": {
 		"PageSaveComplete": "main",
-		"BeforeCreateEchoEvent": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks::onBeforeCreateEchoEvent",
+		"BeforeCreateEchoEvent": "echo",
 		"GetPreferences": "main"
 	},
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\Extension\\TheWikipediaLibrary\\Hooks"
+		},
+		"echo": {
+			"class": "MediaWiki\\Extension\\TheWikipediaLibrary\\EchoHooks"
 		}
 	},
 	"config": {

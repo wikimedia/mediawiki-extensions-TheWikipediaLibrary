@@ -3,8 +3,6 @@
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use DeferredUpdates;
-use EchoAttributeManager;
-use EchoUserLocator;
 use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
@@ -28,32 +26,6 @@ class Hooks implements
 	PageSaveCompleteHook,
 	GetPreferencesHook
 {
-
-	/**
-	 * Add The Wikipedia Library - eligibility events to Echo
-	 *
-	 * @param array &$notifications array of Echo notifications
-	 * @param array &$notificationCategories array of Echo notification categories
-	 * @param array &$icons array of icon details
-	 */
-	public static function onBeforeCreateEchoEvent(
-		array &$notifications, array &$notificationCategories, array &$icons
-	) {
-		$notifications['twl-eligible'] = [
-			EchoAttributeManager::ATTR_LOCATORS => [
-				[ [ EchoUserLocator::class, 'locateEventAgent' ] ],
-			],
-			'canNotifyAgent' => true,
-			'category' => 'system-noemail',
-			'group' => 'positive',
-			'section' => 'message',
-			'presentation-model' => TwlEligiblePresentationModel::class,
-		];
-
-		$icons['twl-eligible'] = [
-			'path' => 'TheWikipediaLibrary/modules/icons/twl-eligible.svg'
-		];
-	}
 
 	/**
 	 * Add API preference tracking whether the user has been notified already.
