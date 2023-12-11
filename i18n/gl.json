@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
-			"Toliño"
+			"Toliño",
+			"O Breixo"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Sistema para avisar ós usuarios de Wikipedia",
+	"thewikipedialibrary-desc": "Notifica aos usuarios da súa elexibilidade para á Biblioteca da Wikipedia cando superen o reconto de edicións e a idade mínima da conta",
 	"notification-header-twl-eligiblity": "Felicidadesǃ Vostede é apto para acceder ás bases de datos da Biblioteca de Wikipedia",
 	"notification-body-twl-eligiblity": "Solicitar un acceso libre ás bases de datos de investigación",
-	"notification-twl-eligiblity-secondarylink-text": "A biblioteca da Wikipedia",
+	"notification-twl-eligiblity-secondarylink-text": "A Biblioteca da Wikipedia",
 	"notification-twl-eligiblity-primarylink-text": "Ver bases de datos dispoñibles"
 }
