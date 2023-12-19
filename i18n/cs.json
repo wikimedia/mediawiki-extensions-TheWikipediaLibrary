@@ -3,12 +3,14 @@
 		"authors": [
 			"Mormegil",
 			"Patriccck",
-			"Patrik L."
+			"Patrik L.",
+			"Martin Urbanec",
+			"Matěj Suchánek"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
 	"thewikipedialibrary-desc": "Systém pro notifikování uživatelů Wikipedie",
-	"notification-header-twl-eligiblity": "Gratulujeme! Máte přístup k databázím Knihovny Wikipedie",
-	"notification-body-twl-eligiblity": "Požádejte o bezplatný přístup k výzkumným databázím",
+	"notification-header-twl-eligiblity": "Gratulujeme! Máte přístup k Wikiknihovně.",
+	"notification-body-twl-eligiblity": "Pro procházení bezplatných věrohodných zdrojů klikněte sem.",
 	"notification-twl-eligiblity-secondarylink-text": "Knihovna Wikipedie"
 }
