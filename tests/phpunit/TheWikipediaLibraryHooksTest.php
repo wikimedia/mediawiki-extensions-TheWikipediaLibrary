@@ -10,6 +10,13 @@ use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
  */
 class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 
+	private CentralAuthUser $centralAuthUser1;
+	private CentralAuthUser $centralAuthUser2;
+	private User $user1;
+	private User $user2;
+	private WikiPage $mockEntityPage1;
+	private WikiPage $mockEntityPage2;
+
 	protected function setUp(): void {
 		parent::setUp();
 
