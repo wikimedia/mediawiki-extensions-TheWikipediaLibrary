@@ -4,6 +4,7 @@ use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TheWikipediaLibrary\Hooks as TheWikipediaLibraryHooks;
 use MediaWiki\Extension\TheWikipediaLibrary\PreferenceHelper;
+use MediaWiki\User\User;
 
 /**
  * @group TheWikipediaLibrary
