@@ -11,8 +11,8 @@ namespace MediaWiki\Extension\TheWikipediaLibrary;
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\User;
 use RequestContext;
-use User;
 
 class PreferenceHelper {
 
