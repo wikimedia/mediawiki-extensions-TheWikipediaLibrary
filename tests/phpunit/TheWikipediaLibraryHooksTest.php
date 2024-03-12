@@ -96,7 +96,7 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	 * @covers \MediaWiki\Extension\TheWikipediaLibrary\Hooks::isTwlEligible()
 	 */
 	public function testIsTwlEligibleUserNotified() {
-		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::Class )
+		$prefsFactory = $this->getMockBuilder( GlobalPreferencesFactory::class )
 			->disableOriginalConstructor()
 			->disableOriginalClone()
 			->disableArgumentCloning()
