@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
 use MediaWiki\Title\Title;
+use Wikimedia\Rdbms\Platform\ISQLPlatform;
 
 /**
  * @group TheWikipediaLibrary
@@ -33,8 +34,16 @@ class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 
 	private function deleteEchoData() {
 		$db = MWEchoDbFactory::newFromDefault()->getEchoDb( DB_PRIMARY );
-		$db->delete( 'echo_event', '*', __METHOD__ );
-		$db->delete( 'echo_notification', '*', __METHOD__ );
+		$db->newDeleteQueryBuilder()
+			->deleteFrom( 'echo_event' )
+			->where( ISQLPlatform::ALL_ROWS )
+			->caller( __METHOD__ )
+			->execute();
+		$db->newDeleteQueryBuilder()
+			->deleteFrom( 'echo_notification' )
+			->where( ISQLPlatform::ALL_ROWS )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 }
