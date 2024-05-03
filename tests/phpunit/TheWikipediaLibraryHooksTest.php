@@ -52,12 +52,8 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 			->disableOriginalClone()
 			->disableArgumentCloning()
 			->disallowMockingUnknownTypes()
-			->onlyMethods( [ 'getOption', 'getName' ] )
+			->onlyMethods( [ 'getName' ] )
 			->getMock();
-		$this->user1->method( 'getOption' )
-			->will( self::returnValueMap( [
-				[ 'twl-notified', null, false ],
-			] ) );
 		$this->user1->method( 'getName' )->willReturn( $user1Name );
 
 		$this->mockEntityPage1 = $this->createMock( WikiPage::class );
@@ -81,12 +77,8 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 			->disableOriginalClone()
 			->disableArgumentCloning()
 			->disallowMockingUnknownTypes()
-			->onlyMethods( [ 'getOption', 'getName' ] )
+			->onlyMethods( [ 'getName' ] )
 			->getMock();
-		$this->user2->method( 'getOption' )
-			->will( self::returnValueMap( [
-				[ 'twl-notified', null, false ],
-			] ) );
 		$this->user2->method( 'getName' )->willReturn( $user2Name );
 
 		$this->mockEntityPage2 = $this->createMock( WikiPage::class );
