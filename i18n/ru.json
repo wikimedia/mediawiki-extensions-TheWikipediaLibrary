@@ -3,13 +3,14 @@
 		"authors": [
 			"DDPAT",
 			"Iluvatar",
+			"Kaganer",
 			"Okras",
 			"Redredsonia",
 			"Vlad5250",
 			"Умар"
 		]
 	},
-	"thewikipedialibrary": "БиблиотекаВикипедии",
+	"thewikipedialibrary": "Библиотека Википедии",
 	"thewikipedialibrary-desc": "Уведомление пользователей об их праве на участие в Wikipedia Library, когда они достигают нужного числа правок и возраста учётной записи",
 	"notification-header-twl-eligiblity": "Поздравляем! Теперь у вас есть доступ к базам Библиотеки Википедии.",
 	"notification-body-twl-eligiblity": "Нажмите здесь, чтобы просмотреть обширную коллекцию бесплатных надежных источников.",
