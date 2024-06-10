@@ -1,7 +1,7 @@
 <?php
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
-use EchoEventPresentationModel;
+use MediaWiki\Extension\Notifications\Formatters\EchoEventPresentationModel;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 

@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\Notifications\DbFactory;
+use MediaWiki\Extension\Notifications\Mapper\NotificationMapper;
 use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\Platform\ISQLPlatform;
@@ -27,13 +29,13 @@ class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 		}
 
 		// assertions
-		$notificationMapper = new EchoNotificationMapper();
+		$notificationMapper = new NotificationMapper();
 		$notifications = $notificationMapper->fetchByUser( $user, 10, null, [ 'twl-eligible' ] );
 		$this->assertCount( 1, $notifications );
 	}
 
 	private function deleteEchoData() {
-		$db = MWEchoDbFactory::newFromDefault()->getEchoDb( DB_PRIMARY );
+		$db = DbFactory::newFromDefault()->getEchoDb( DB_PRIMARY );
 		$db->newDeleteQueryBuilder()
 			->deleteFrom( 'echo_event' )
 			->where( ISQLPlatform::ALL_ROWS )

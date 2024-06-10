@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
-use EchoAttributeManager;
-use EchoUserLocator;
+use MediaWiki\Extension\Notifications\AttributeManager;
 use MediaWiki\Extension\Notifications\Hooks\BeforeCreateEchoEventHook;
+use MediaWiki\Extension\Notifications\UserLocator;
 
 /**
  * TheWikipediaLibrary extension hooks
@@ -28,8 +28,8 @@ class EchoHooks implements
 		array &$notifications, array &$notificationCategories, array &$icons
 	): void {
 		$notifications['twl-eligible'] = [
-			EchoAttributeManager::ATTR_LOCATORS => [
-				[ [ EchoUserLocator::class, 'locateEventAgent' ] ],
+			AttributeManager::ATTR_LOCATORS => [
+				[ [ UserLocator::class, 'locateEventAgent' ] ],
 			],
 			'canNotifyAgent' => true,
 			'category' => 'system-noemail',

@@ -9,9 +9,9 @@
 
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
-use EchoEvent;
-use EchoNotification;
-use EchoNotificationMapper;
+use MediaWiki\Extension\Notifications\Mapper\NotificationMapper;
+use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\Extension\Notifications\Model\Notification;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
@@ -26,10 +26,10 @@ class EchoHelper {
 	 * @return bool
 	 */
 	public static function send( UserIdentity $user, Title $title ) {
-		$notificationMapper = new EchoNotificationMapper();
+		$notificationMapper = new NotificationMapper();
 		$notifications = $notificationMapper->fetchByUser( $user, 1, null, [ 'twl-eligible' ] );
 		$type = 'twl-eligible';
-		/** @var EchoNotification $notification */
+		/** @var Notification $notification */
 		foreach ( $notifications as $notification ) {
 			if ( $notification->getEvent()->getType() === $type ) {
 				LoggerFactory::getInstance( 'TheWikipediaLibrary' )->debug(
@@ -42,7 +42,7 @@ class EchoHelper {
 				return true;
 			}
 		}
-		if ( EchoEvent::create( [
+		if ( Event::create( [
 			'type' => $type,
 			'title' => $title,
 			'agent' => $user,

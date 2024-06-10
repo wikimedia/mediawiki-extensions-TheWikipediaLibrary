@@ -10,9 +10,9 @@ namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use GlobalPreferences\GlobalPreferencesFactory;
 use GlobalPreferences\Storage;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
-use RequestContext;
 
 class PreferenceHelper {
 
