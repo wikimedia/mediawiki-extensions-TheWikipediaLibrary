@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Tofeiku",
+			"Zahirulnukman",
 			"Zulfadli51"
 		]
 	},
 	"thewikipedialibrary": "PerpustakaanWikipedia",
-	"thewikipedialibrary-desc": "Sistem untuk memberitahu Pengguna Wikipedia",
-	"notification-header-twl-eligiblity": "Tahniah! Anda layak untuk Perpustakaan Wikipedia",
-	"notification-body-twl-eligiblity": "Mohon untuk mendapatkan akses percuma ke pangkalan data penyelidikan",
+	"thewikipedialibrary-desc": "Beritahu pengguna tentang kelayakan mereka untuk Perpustakaan Wikipedia apabila mereka melepasi syarat kiraan sunting dan usia akaun",
+	"notification-header-twl-eligiblity": "Tahniah! Anda kini layak untuk Perpustakaan Wikipedia.",
+	"notification-body-twl-eligiblity": "Ketik di sini untuk membelek himpunan besar sumber bebas yang boleh dipercayai.",
 	"notification-twl-eligiblity-secondarylink-text": "Perpustakaan Wikipedia"
 }
