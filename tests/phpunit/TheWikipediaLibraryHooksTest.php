@@ -21,9 +21,7 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgTwlEditCount' => 2,
-		] );
+		$this->overrideConfigValue( 'TwlEditCount', 2 );
 
 		// Methods that need to be set on both global users
 		$methods = [
