@@ -7,7 +7,6 @@ use MediaWiki\Config\Config;
 use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\RevisionRecord;
@@ -117,7 +116,7 @@ class Hooks implements
 				return;
 			}
 			// Only proceed if we're dealing with an eligible account
-			if ( !self::isTwlEligible( $centralAuthUser ) ) {
+			if ( !$this->isTwlEligible( $centralAuthUser ) ) {
 				return;
 			}
 			// Set the twl-notified preference to 'no' if we haven't notified this user
@@ -146,10 +145,8 @@ class Hooks implements
 	 * @return bool
 	 *
 	 */
-	public static function isTwlEligible( CentralAuthUser $centralAuthUser ) {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
-
-		$twlRegistrationDays = $config->get( 'TwlRegistrationDays' );
+	public function isTwlEligible( CentralAuthUser $centralAuthUser ) {
+		$twlRegistrationDays = $this->config->get( 'TwlRegistrationDays' );
 		$minimumAge = $twlRegistrationDays * 24 * 3600;
 		$accountAge = (int)wfTimestamp( TS_UNIX ) -
 			(int)wfTimestamp( TS_UNIX, $centralAuthUser->getRegistration() );
@@ -157,7 +154,7 @@ class Hooks implements
 			return false;
 		}
 
-		$twlEditCount = $config->get( 'TwlEditCount' );
+		$twlEditCount = $this->config->get( 'TwlEditCount' );
 		$globalEditCount = $centralAuthUser->getGlobalEditCount();
 
 		return $globalEditCount >= $twlEditCount;

@@ -18,6 +18,15 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 	private WikiPage $mockEntityPage1;
 	private WikiPage $mockEntityPage2;
 
+	private function newHooks() {
+		$services = $this->getServiceContainer();
+		return new TheWikipediaLibraryHooks(
+			$services->getConfigFactory(),
+			$services->getPermissionManager(),
+			$services->getUserFactory()
+		);
+	}
+
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -95,7 +104,8 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 			->setMockClassName( 'GlobalPreferencesFactory' )
 			->getMock();
 
-		if ( TheWikipediaLibraryHooks::isTwlEligible( $this->centralAuthUser1 ) ) {
+		$theWikipediaLibraryHooks = $this->newHooks();
+		if ( $theWikipediaLibraryHooks->isTwlEligible( $this->centralAuthUser1 ) ) {
 			$prefsFactory->method( 'getGlobalPreferencesValues' )
 				->willReturn( [
 					'twl-notified' => 'yes',
@@ -122,7 +132,8 @@ class TheWikipediaLibraryHooksTest extends MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->onlyMethods( [ 'getGlobalPreferencesValues' ] )
 			->getMock();
-		if ( TheWikipediaLibraryHooks::isTwlEligible( $this->centralAuthUser2 ) ) {
+		$theWikipediaLibraryHooks = $this->newHooks();
+		if ( $theWikipediaLibraryHooks->isTwlEligible( $this->centralAuthUser2 ) ) {
 			$prefsFactory->method( 'getGlobalPreferencesValues' )
 				->willReturn( [
 					'twl-notified' => 'yes',
