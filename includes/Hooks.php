@@ -3,15 +3,19 @@
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use ExtensionRegistry;
+use MediaWiki\Config\Config;
+use MediaWiki\Config\ConfigFactory;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Storage\EditResult;
 use MediaWiki\Storage\Hook\PageSaveCompleteHook;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use WikiPage;
 
@@ -26,6 +30,19 @@ class Hooks implements
 	PageSaveCompleteHook,
 	GetPreferencesHook
 {
+	private Config $config;
+	private PermissionManager $permissionManager;
+	private UserFactory $userFactory;
+
+	public function __construct(
+		ConfigFactory $configFactory,
+		PermissionManager $permissionManager,
+		UserFactory $userFactory
+	) {
+		$this->config = $configFactory->makeConfig( 'TheWikipediaLibrary' );
+		$this->permissionManager = $permissionManager;
+		$this->userFactory = $userFactory;
+	}
 
 	/**
 	 * Add API preference tracking whether the user has been notified already.
@@ -65,10 +82,9 @@ class Hooks implements
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
 			return;
 		}
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'TheWikipediaLibrary' );
-		if ( $config->get( 'TwlSendNotifications' ) ) {
+		if ( $this->config->get( 'TwlSendNotifications' ) ) {
 			$title = $wikiPage->getTitle();
-			self::maybeSendNotification( $userIdentity, $title );
+			$this->maybeSendNotification( $userIdentity, $title );
 		}
 	}
 
@@ -78,18 +94,16 @@ class Hooks implements
 	 * @param UserIdentity $userIdentity
 	 * @param Title $title
 	 */
-	private static function maybeSendNotification( UserIdentity $userIdentity, Title $title ) {
+	private function maybeSendNotification( UserIdentity $userIdentity, Title $title ) {
 		// Wrap in a POSTSEND deferred update to avoid blocking the HTTP response
 		DeferredUpdates::addCallableUpdate( function () use ( $userIdentity, $title ) {
-			$services = MediaWikiServices::getInstance();
-			$user = $services->getUserFactory()->newFromUserIdentity( $userIdentity );
+			$user = $this->userFactory->newFromUserIdentity( $userIdentity );
 			// Only proceed if we're dealing with an authenticated non-system account
 			if ( $user->isAnon() || $user->isTemp() || $user->isSystemUser() ) {
 				return;
 			}
-			$pm = $services->getPermissionManager();
 			// Only proceed if we're dealing with a non-bot account
-			if ( $pm->userHasRight( $user, 'bot' ) ) {
+			if ( $this->permissionManager->userHasRight( $user, 'bot' ) ) {
 				return;
 			}
 			// Only proceed if we're dealing with an SUL account
