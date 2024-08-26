@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Oujon"
+		]
+	},
+	"thewikipedialibrary-desc": "Upozornite používateľov na ich spôsobilosť pre knižnicu Wikipedia, keď prekročia počet úprav a vekové hranice účtu",
+	"notification-header-twl-eligiblity": "Gratulujem! Teraz máte nárok na Knižnicu Wikipedia.",
+	"notification-body-twl-eligiblity": "Kliknite tu, aby ste si prehľadávali širokú kolekciu bezplatných a spoľahlivých zdrojov.",
+	"notification-twl-eligiblity-secondarylink-text": "Knižnica Wikipedia"
+}
