@@ -8,10 +8,11 @@
 			"Pols12",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Mahabarata"
 		]
 	},
-	"thewikipedialibrary": "LaBibliothèqueWikipédia",
+	"thewikipedialibrary": "The&shy;Wikipedia&shy;Library",
 	"thewikipedialibrary-desc": "Notifier aux utilisateurs leur éligibilité à la Bibliothèque Wikipédia lorsqu’ils franchissent les seuils de nombre de modifications et d’ancienneté de leur compte",
 	"notification-header-twl-eligiblity": "Félicitations ! Vous avez maintenant accès à La Bibliothèque Wikipédia.",
 	"notification-body-twl-eligiblity": "Cliquer ici pour naviguer dans une large collection de sources fiables et gratuites.",
