@@ -4,12 +4,14 @@
 			"Colathewikian",
 			"GuoPC",
 			"Lakejason0",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Anterdc99",
+			"WiiUf"
 		]
 	},
 	"thewikipedialibrary": "维基百科图书馆",
 	"thewikipedialibrary-desc": "在用户达到编辑次数和账户年龄阈值时，通知他们有资格使用维基百科图书馆",
-	"notification-header-twl-eligiblity": "祝贺！您现在有资格访问维基百科图书馆数据库了。",
+	"notification-header-twl-eligiblity": "恭喜！您已获准使用维基百科图书馆。",
 	"notification-body-twl-eligiblity": "点击此处来浏览大量免费且可靠的资源。",
 	"notification-twl-eligiblity-secondarylink-text": "维基百科图书馆"
 }
