@@ -32,6 +32,9 @@ class PreferenceHelper {
 		}
 		'@phan-var GlobalPreferencesFactory $globalPref';
 		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
+		if ( $prefs === false ) {
+			$prefs = [];
+		}
 		$prefs[$preference] = $value;
 		$user = $user->getInstanceForUpdate();
 		// Set up the context and check if WikiPage is available from it
