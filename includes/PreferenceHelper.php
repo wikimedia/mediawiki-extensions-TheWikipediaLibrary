@@ -62,6 +62,9 @@ class PreferenceHelper {
 		}
 		'@phan-var GlobalPreferencesFactory $globalPref';
 		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
+		if ( $prefs === false ) {
+			$prefs = [];
+		}
 		return $prefs[$preference] ?? null;
 	}
 }
