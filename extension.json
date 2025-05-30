@@ -30,7 +30,6 @@
 	},
 	"Hooks": {
 		"PageSaveComplete": "main",
-		"BeforeCreateEchoEvent": "echo",
 		"GetPreferences": "main"
 	},
 	"HookHandlers": {
@@ -41,9 +40,6 @@
 				"PermissionManager",
 				"UserFactory"
 			]
-		},
-		"echo": {
-			"class": "MediaWiki\\Extension\\TheWikipediaLibrary\\EchoHooks"
 		}
 	},
 	"config": {
@@ -70,6 +66,27 @@
 	},
 	"ConfigRegistry": {
 		"TheWikipediaLibrary": "GlobalVarConfig::newInstance"
+	},
+	"attributes": {
+		"Echo": {
+			"Notifications": {
+				"twl-eligible": {
+					"user-locators": [
+						"MediaWiki\\Extension\\Notifications\\UserLocator::locateEventAgent"
+					],
+					"canNotifyAgent": true,
+					"category": "system-noemail",
+					"group": "positive",
+					"section": "message",
+					"presentation-model": "MediaWiki\\Extension\\TheWikipediaLibrary\\TwlEligiblePresentationModel"
+				}
+			},
+			"NotificationIcons": {
+				"twl-eligible": {
+					"path": "TheWikipediaLibrary/modules/icons/twl-eligible.svg"
+				}
+			}
+		}
 	},
 	"manifest_version": 2
 }
