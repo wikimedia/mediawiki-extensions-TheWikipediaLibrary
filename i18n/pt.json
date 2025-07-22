@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Ixocactus"
+			"Ixocactus",
+			"O andras"
 		]
 	},
-	"thewikipedialibrary": "A Biblioteca da Wikipédia",
+	"thewikipedialibrary": "A Biblioteca da &shy;Wikipédia&shy;",
 	"thewikipedialibrary-desc": "Notificar os utilizadores da sua elegibilidade para a Biblioteca da Wikipédia quando atingirem os patamares da contagem de edições e da idade da conta",
 	"notification-header-twl-eligiblity": "Parabéns! É agora elegível para aceder à Biblioteca da Wikipédia.",
 	"notification-body-twl-eligiblity": "Clique aqui para consultar um vasto conjunto de fontes de confiança e gratuitas.",
