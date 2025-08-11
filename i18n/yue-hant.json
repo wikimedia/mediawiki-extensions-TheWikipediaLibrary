@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"JeffreyKim",
+			"Ktchankt",
 			"Winston Sung"
 		]
 	},
-	"thewikipedialibrary-desc": "當使用者超過編輯次數同帳戶年齡門檻嗰陣，通知佢哋有資格使用維基百科圖書館",
+	"thewikipedialibrary-desc": "當用戶超過編輯次數同戶口年期嘅門檻嗰陣，通知佢哋有資格使用維基百科圖書館",
 	"notification-header-twl-eligiblity": "恭喜！你而家有資格去用維基百科圖書館。",
 	"notification-body-twl-eligiblity": "撳呢度瀏覽一系列免費可靠嘅來源。",
 	"notification-twl-eligiblity-secondarylink-text": "維基百科圖書館"
