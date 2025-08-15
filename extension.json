@@ -65,7 +65,7 @@
 		}
 	},
 	"ConfigRegistry": {
-		"TheWikipediaLibrary": "GlobalVarConfig::newInstance"
+		"TheWikipediaLibrary": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"attributes": {
 		"Echo": {
