@@ -29,18 +29,14 @@ class Hooks implements
 	PageSaveCompleteHook,
 	GetPreferencesHook
 {
-	private Config $config;
-	private PermissionManager $permissionManager;
-	private UserFactory $userFactory;
+	private readonly Config $config;
 
 	public function __construct(
 		ConfigFactory $configFactory,
-		PermissionManager $permissionManager,
-		UserFactory $userFactory
+		private readonly PermissionManager $permissionManager,
+		private readonly UserFactory $userFactory,
 	) {
 		$this->config = $configFactory->makeConfig( 'TheWikipediaLibrary' );
-		$this->permissionManager = $permissionManager;
-		$this->userFactory = $userFactory;
 	}
 
 	/**
