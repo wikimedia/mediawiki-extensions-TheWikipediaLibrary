@@ -139,7 +139,6 @@ class Hooks implements
 	 *
 	 * @param CentralAuthUser $centralAuthUser
 	 * @return bool
-	 *
 	 */
 	public function isTwlEligible( CentralAuthUser $centralAuthUser ) {
 		$twlRegistrationDays = $this->config->get( 'TwlRegistrationDays' );
