@@ -21,7 +21,6 @@ use MediaWiki\User\UserIdentity;
 /**
  * TheWikipediaLibrary extension hooks
  *
- * @file
  * @ingroup Extensions
  * @license MIT
  */
