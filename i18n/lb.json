@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"thewikipedialibrary-desc": "System fir The-Wikipedia-Benotzer ze informéieren",
-	"notification-header-twl-eligiblity": "Felicitatiounen! Dir kënnt Zougang op Wikipedia-Library kréien",
-	"notification-body-twl-eligiblity": "Frot u fir Zougang op Forschungsdatebanken ze kréien",
+	"notification-header-twl-eligiblity": "Gléckwonsch! Dir sidd elo eligibel fir Zougrëff op d'Wikipedia-Bibliothéik ze kréien.",
+	"notification-body-twl-eligiblity": "Klickt hei fir eng grouss Sammlung vu Quellen ze duerchsichen, déi gratis an zouverléisseg sinn.",
 	"notification-twl-eligiblity-secondarylink-text": "D'Wikipedia-Bibliothéik"
 }
