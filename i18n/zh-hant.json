@@ -3,12 +3,13 @@
 		"authors": [
 			"Kly",
 			"Liuxinyu970226",
+			"LowensteinYang",
 			"SCP-2000",
 			"Thomassth"
 		]
 	},
 	"thewikipedialibrary": "維基百科圖書館",
-	"thewikipedialibrary-desc": "當使用者的編輯次數和帳號存在時間通過門檻時，通知他們擁有使用維基百科圖書館資格",
+	"thewikipedialibrary-desc": "當使用者的編輯次數和帳號年齡通過門檻時，通知他們擁有使用維基百科圖書館資格",
 	"notification-header-twl-eligiblity": "恭喜！現在你已獲准使用維基百科圖書館。",
 	"notification-body-twl-eligiblity": "在此點擊來瀏覽大量免費且可靠的來源。",
 	"notification-twl-eligiblity-secondarylink-text": "維基百科圖書館"
