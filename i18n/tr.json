@@ -5,12 +5,13 @@
 			"BaRaN6161 TURK",
 			"Hedda",
 			"SaldırganSincap",
-			"Rapsar"
+			"Rapsar",
+			"Eleman"
 		]
 	},
 	"thewikipedialibrary": "TheWikipediaLibrary",
-	"thewikipedialibrary-desc": "Kullanıcıları, değişiklik sayısı ve hesap yaşı eşiklerini geçtiğinde Vikipedi Kütüphanesi'ne uygunluklarını bildirin.",
+	"thewikipedialibrary-desc": "Kullanıcılara, değişiklik sayısı ve hesap yaşı eşiklerini geçtiklerinde Vikipedi Kütüphanesi'ne uygunluklarını bildirin.",
 	"notification-header-twl-eligiblity": "Tebrikler! Artık Vikipedi Kütüphanesi'ni kullanabilirsiniz.",
-	"notification-body-twl-eligiblity": "Ücretsiz güvenilir kaynaklardan oluşan geniş bir koleksiyona göz atmak için burayı tıklayın.",
+	"notification-body-twl-eligiblity": "Ücretsiz güvenilir kaynaklardan oluşan geniş bir koleksiyona ulaşmak için buraya tıklayın.",
 	"notification-twl-eligiblity-secondarylink-text": "Vikipedi Kütüphanesi"
 }
