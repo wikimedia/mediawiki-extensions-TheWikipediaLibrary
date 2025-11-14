@@ -12,6 +12,11 @@ use Wikimedia\Rdbms\Platform\ISQLPlatform;
  */
 class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 
+	protected function setUp(): void {
+		parent::setUp();
+		$this->markTestSkippedIfExtensionNotLoaded( 'Echo' );
+	}
+
 	/**
 	 * @covers MediaWiki\Extension\TheWikipediaLibrary\EchoHelper::send
 	 */
