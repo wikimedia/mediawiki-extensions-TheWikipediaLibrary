@@ -10,6 +10,7 @@ class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
+		$this->markTestSkippedIfExtensionNotLoaded( 'Echo' );
 		$this->tablesUsed[] = 'echo_event';
 		$this->tablesUsed[] = 'echo_notification';
 	}
