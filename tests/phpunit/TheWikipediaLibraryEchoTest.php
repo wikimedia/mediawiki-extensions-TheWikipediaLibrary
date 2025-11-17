@@ -7,6 +7,7 @@ use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\Platform\ISQLPlatform;
 
 /**
+ * @covers \MediaWiki\Extension\TheWikipediaLibrary\EchoHelper
  * @group TheWikipediaLibrary
  * @group Database
  */
@@ -17,17 +18,14 @@ class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 		$this->markTestSkippedIfExtensionNotLoaded( 'Echo' );
 	}
 
-	/**
-	 * @covers MediaWiki\Extension\TheWikipediaLibrary\EchoHelper::send
-	 */
 	public function testNoDupes() {
 		// setup
 		$this->deleteEchoData();
 		$user = $this->getMutableTestUser()->getUser();
-		$title = Title::newFromText( 'Help:MWEchoThankYouEditTest_testFirstEdit' );
+		$title = Title::makeTitle( NS_HELP, 'MWEchoThankYouEditTest_testFirstEdit' );
 
 		// action
-		for ( $i = 0; $i < 12; $i++ ) {
+		for ( $i = 3; $i--; ) {
 			EchoHelper::send( $user, $title );
 			// Reload to reflect deferred update
 			$user->clearInstanceCache();
@@ -35,7 +33,7 @@ class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 
 		// assertions
 		$notificationMapper = new NotificationMapper();
-		$notifications = $notificationMapper->fetchByUser( $user, 10, null, [ 'twl-eligible' ] );
+		$notifications = $notificationMapper->fetchByUser( $user, 3, null, [ 'twl-eligible' ] );
 		$this->assertCount( 1, $notifications );
 	}
 

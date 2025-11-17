@@ -24,26 +24,22 @@ class PreferenceHelper {
 	 * @return bool
 	 */
 	public static function setGlobalPreference( User $user, string $preference, string $value ) {
-		/** @var GlobalPreferencesFactory $globalPref */
 		$globalPref = MediaWikiServices::getInstance()->getPreferencesFactory();
 		// Need GlobalPreferences extension.
 		if ( !$globalPref instanceof GlobalPreferencesFactory ) {
 			return false;
 		}
-		'@phan-var GlobalPreferencesFactory $globalPref';
-		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
-		if ( $prefs === false ) {
-			$prefs = [];
-		}
-		$prefs[$preference] = $value;
+
 		// Set up the context and check if WikiPage is available from it
 		// Once preference definitions don't require the context, this can be removed
 		$context = RequestContext::getMain();
-		if ( $context->canUseWikiPage() ) {
-			return $globalPref->setGlobalPreferences( $user, $prefs, $context );
+		if ( !$context->canUseWikiPage() ) {
+			return false;
 		}
 
-		return false;
+		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE ) ?: [];
+		$prefs[$preference] = $value;
+		return $globalPref->setGlobalPreferences( $user, $prefs, $context );
 	}
 
 	/**
@@ -53,17 +49,13 @@ class PreferenceHelper {
 	 * @return string|null Preference value
 	 */
 	public static function getGlobalPreference( User $user, string $preference ) {
-		/** @var GlobalPreferencesFactory $globalPref */
 		$globalPref = MediaWikiServices::getInstance()->getPreferencesFactory();
 		// Need GlobalPreferences extension.
 		if ( !$globalPref instanceof GlobalPreferencesFactory ) {
 			return null;
 		}
-		'@phan-var GlobalPreferencesFactory $globalPref';
-		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE );
-		if ( $prefs === false ) {
-			$prefs = [];
-		}
+
+		$prefs = $globalPref->getGlobalPreferencesValues( $user, Storage::SKIP_CACHE ) ?: [];
 		return $prefs[$preference] ?? null;
 	}
 }

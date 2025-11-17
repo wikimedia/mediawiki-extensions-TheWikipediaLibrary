@@ -72,11 +72,9 @@ class Hooks implements
 		$revisionRecord,
 		$editResult
 	) {
-		// Need CentralAuth extension.
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
-			return;
-		}
-		if ( $this->config->get( 'TwlSendNotifications' ) ) {
+		if ( $this->config->get( 'TwlSendNotifications' ) &&
+			ExtensionRegistry::getInstance()->isLoaded( 'Echo' )
+		) {
 			$title = $wikiPage->getTitle();
 			$this->maybeSendNotification( $userIdentity, $title );
 		}
@@ -93,7 +91,7 @@ class Hooks implements
 		DeferredUpdates::addCallableUpdate( function () use ( $userIdentity, $title ) {
 			$user = $this->userFactory->newFromUserIdentity( $userIdentity );
 			// Only proceed if we're dealing with an authenticated non-system account
-			if ( $user->isAnon() || $user->isTemp() || $user->isSystemUser() ) {
+			if ( !$user->isNamed() || $user->isSystemUser() ) {
 				return;
 			}
 			// Only proceed if we're dealing with a non-bot account
