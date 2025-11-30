@@ -36,7 +36,6 @@ class PreferenceHelper {
 			$prefs = [];
 		}
 		$prefs[$preference] = $value;
-		$user = $user->getInstanceForUpdate();
 		// Set up the context and check if WikiPage is available from it
 		// Once preference definitions don't require the context, this can be removed
 		$context = RequestContext::getMain();
