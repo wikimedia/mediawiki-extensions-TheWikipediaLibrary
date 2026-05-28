@@ -3,14 +3,15 @@
 		"authors": [
 			"Assem Khidhr",
 			"FiberAhmed",
+			"Kopmil",
 			"Meno25",
 			"أَحمد",
 			"ديفيد"
 		]
 	},
 	"thewikipedialibrary": "مكتبة ويكيبيديا",
-	"thewikipedialibrary-desc": "أخطر المستخدمين بأهليتهم لمكتبة ويكيبيديا عندما يتجاوزون حدي عدد التعديلات وعمر الحساب اللازمين",
-	"notification-header-twl-eligiblity": "تهانينا! أنت الآن مؤهل لاستخدام مكتبة ويكيبيديا.",
-	"notification-body-twl-eligiblity": "انقر هنا لتصفح تشكيلة واسعة من المصادر الموثوقة مجانًا.",
+	"thewikipedialibrary-desc": "أخطِر المستخدمين بأهليتهم لمكتبة ويكيبيديا عند تجاوزهم عتبات عدد التعديلات وعمر الحساب",
+	"notification-header-twl-eligiblity": "تهانينا! أنت الآن مؤهّل للانضمام إلى مكتبة ويكيبيديا.",
+	"notification-body-twl-eligiblity": "انقر هنا لتصفُّح مجموعة واسعة من المصادر المجانية الموثوقة.",
 	"notification-twl-eligiblity-secondarylink-text": "مكتبة ويكيبيديا"
 }
