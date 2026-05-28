@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Omotecho",
-			"Suyama"
+			"Suyama",
+			"Tensama0415"
 		]
 	},
-	"thewikipedialibrary": "ウィキペディア図書館",
+	"thewikipedialibrary": "ウィキペディア&shy;図書館",
 	"thewikipedialibrary-desc": "編集回数と登録期間のしきい値を超えた時、利用者に資格取得を通知する",
 	"notification-header-twl-eligiblity": "おめでとうございます！ ウィキペディア図書館の利用資格を取得されました。",
 	"notification-body-twl-eligiblity": "ここをクリックすると無料の信頼できる情報源が多数あり、目を通してください。",
