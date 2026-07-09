@@ -7,5 +7,8 @@
 		]
 	},
 	"thewikipedialibrary": "Wikipedia-biblioteket",
+	"thewikipedialibrary-desc": "Giv brugerne besked om deres berettigelse til Wikipedia-biblioteket, når de overskrider grænserne for antal redigeringer og alder for kontoen.",
+	"notification-header-twl-eligiblity": "Tillykke! Du er nu berettiget til Wikipedia-biblioteket.",
+	"notification-body-twl-eligiblity": "Klik her for at gennemse en bred samling af gratis pålidelige kilder.",
 	"notification-twl-eligiblity-secondarylink-text": "Wikipedia-biblioteket"
 }
