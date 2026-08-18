@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extension\Notifications\DbFactory;
+use MediaWiki\Extension\Notifications\DbDomains;
 use MediaWiki\Extension\Notifications\Mapper\NotificationMapper;
 use MediaWiki\Extension\TheWikipediaLibrary\EchoHelper;
 use MediaWiki\Title\Title;
@@ -38,7 +38,8 @@ class TheWikipediaLibraryEchoTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function deleteEchoData() {
-		$db = DbFactory::newFromDefault()->getEchoDb( DB_PRIMARY );
+		$db = $this->getServiceContainer()->getConnectionProvider()
+			->getPrimaryDatabase( DbDomains::VIRTUAL_DOMAIN );
 		$db->newDeleteQueryBuilder()
 			->deleteFrom( 'echo_event' )
 			->where( ISQLPlatform::ALL_ROWS )
