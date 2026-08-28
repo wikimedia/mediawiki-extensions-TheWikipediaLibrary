@@ -6,8 +6,9 @@
 			"Toliño"
 		]
 	},
-	"thewikipedialibrary-desc": "Notifica aos usuarios da súa elixibilidade para á Biblioteca da Wikipedia cando superen o número de edicións e a idade mínima da conta",
-	"notification-header-twl-eligiblity": "Parabénsǃ Agora es elixible para acceder á Biblioteca de Wikipedia",
-	"notification-body-twl-eligiblity": "Fai clic aquí para consultar unha ampla colección de fontes fiables e gratuitas.",
+	"thewikipedialibrary": "A&shy;Biblioteca&shy;da&shy;Wikipedia",
+	"thewikipedialibrary-desc": "Notifica aos usuarios que xa poden acceder á Biblioteca da Wikipedia cando superan o número de edicións e a antigüidade mínima da conta",
+	"notification-header-twl-eligiblity": "Parabénsǃ Xa podes solicitar acceso á Biblioteca da Wikipedia.",
+	"notification-body-twl-eligiblity": "Fai clic aquí para explorar unha ampla colección de fontes fiables e gratuítas.",
 	"notification-twl-eligiblity-secondarylink-text": "A Biblioteca da Wikipedia"
 }
