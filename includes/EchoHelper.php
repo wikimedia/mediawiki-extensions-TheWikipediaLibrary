@@ -10,8 +10,10 @@
 namespace MediaWiki\Extension\TheWikipediaLibrary;
 
 use MediaWiki\Extension\Notifications\Mapper\NotificationMapper;
-use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Notification\RecipientSet;
+use MediaWiki\Notification\Types\WikiNotification;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 
@@ -40,10 +42,10 @@ class EchoHelper {
 				return true;
 			}
 		}
-		return (bool)Event::create( [
-			'type' => $type,
-			'title' => $title,
-			'agent' => $user,
-		] );
+		MediaWikiServices::getInstance()->getNotificationService()->notify(
+			new WikiNotification( $type, $title, $user, [] ),
+			new RecipientSet( $user )
+		);
+		return true;
 	}
 }
