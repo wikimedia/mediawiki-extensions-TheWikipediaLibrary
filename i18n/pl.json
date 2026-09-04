@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Msz2001"
+			"Msz2001",
+			"PanWor"
 		]
 	},
-	"thewikipedialibrary-desc": "System powiadamiania użytkowników Wikipedii",
+	"thewikipedialibrary": "Biblioteka&shy;Wikipedii",
+	"thewikipedialibrary-desc": "Powiadamia użytkowników o tym, że kwalifikują się do korzystania z Biblioteki Wikipedii, gdy przekroczą progi dotyczące liczby edycji i wieku konta",
 	"notification-header-twl-eligiblity": "Gratulacje! Kwalifikujesz się teraz do korzystania z Biblioteki Wikipedii.",
 	"notification-body-twl-eligiblity": "Kliknij tutaj, aby przejrzeć szeroki zbiór bezpłatnych, wiarygodnych źródeł.",
 	"notification-twl-eligiblity-secondarylink-text": "Biblioteka Wikipedii"
