@@ -24,9 +24,8 @@ class EchoHelper {
 	 *
 	 * @param UserIdentity $user
 	 * @param Title $title
-	 * @return bool
 	 */
-	public static function send( UserIdentity $user, Title $title ) {
+	public static function send( UserIdentity $user, Title $title ): void {
 		$type = 'twl-eligible';
 		$notificationMapper = new NotificationMapper();
 		$notifications = $notificationMapper->fetchByUser( $user, 1, null, [ $type ] );
@@ -38,14 +37,12 @@ class EchoHelper {
 						'user' => $user->getName(),
 						'id' => $user->getId(),
 					] );
-				// Since we found a local notification return true
-				return true;
+				return;
 			}
 		}
 		MediaWikiServices::getInstance()->getNotificationService()->notify(
 			new WikiNotification( $type, $title, $user, [] ),
 			new RecipientSet( $user )
 		);
-		return true;
 	}
 }
